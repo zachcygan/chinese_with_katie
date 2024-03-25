@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`max-w-7xl mx-auto ${inter.className}`}>
+      <body className={`max-w-6xl mx-auto ${inter.className}`}>
         <header>
           <Navbar />
         </header>

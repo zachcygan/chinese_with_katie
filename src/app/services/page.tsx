@@ -1,7 +1,10 @@
+'use client'
+import BookLesson from '../../components/bookLesson'
+
 export default function Services() {
   return (
       <div>
-          1
+          <BookLesson />
       </div>
   )
 }

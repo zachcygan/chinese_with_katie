@@ -54,17 +54,17 @@ export default function BookLesson() {
             Availability is displayed on my calendar when booking a lesson. I suggest booking in advance to reserve your desired time slot
           </div>
         </div>
-        <div className='flex'>
+        <div className='flex bg-[#dedede]'>
           <div>
             <Image
-              src='/assets/images/confetti.png&quot'
+              src='/assets/images/confetti.webp'
               width={500}
               height={500}
               alt=''
               className='h-full'
             />
           </div>
-          <div className='p-10 bg-[#dedede]'>
+          <div className='p-10 '>
             <div className='text-blue-900 text-3xl'>
               Bundle and Save!
             </div>
@@ -75,7 +75,7 @@ export default function BookLesson() {
               <div className='text-3xl pt-14 font-semibold'>
                 Book a total of 4 lessons as a bundle recieve 25%
               </div>
-              <div className='pt-14'>
+              <div className='pt-14 text-xl'>
                 To receive this deal, please specify that you are interetsed in this sale during our conversation call or in the "New Student Form"
               </div>
             </div>

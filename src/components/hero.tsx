@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image";
 
 export default function Hero() {
   const scrollToGettingStarted = () => {
@@ -6,8 +7,16 @@ export default function Hero() {
   };
 
   return (
-    <div>
-      <div className="border-2 border-red-700 p-2 bg-red-600">
+      <div className="border-2 border-red-700 p-2 bg-red-600 mt-14 w-full">
+        <div className="flex justify-end">
+          <Image
+            src='/assets/images/globe.webp'
+            width={150}
+            height={150}
+            alt='Globe'
+            className="absolute rotate-[-10deg]"
+          />
+        </div>
         <div className="text-white font-bold">
           <div className="pt-20 pb-10">
             <div className="text-center text-7xl text-wrap">
@@ -21,16 +30,34 @@ export default function Hero() {
             Elevate your skills FAST with personalized tutoring
           </div>
         </div>
+        <div className="flex justify-start items-start">
+          <Image
+            src='/assets/images/fan.webp'
+            width={200}
+            height={200}
+            alt='Fan'
+            className="absolute"
+          />
+        </div>
+        <div className="flex justify-end items-start">
+          <Image
+            src='/assets/images/dragon.png'
+            width={350}
+            height={350}
+            alt='Fan'
+            className="absolute rotate-[-20deg]"
+          />
+        </div>
         <div className="text-center text-white pb-20">
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="rounded-full bg-blue-800 p-5 text-xl"
             onClick={scrollToGettingStarted}
           >
-              Get Started Today
+            Get Started Today
           </button>
         </div>
+        
       </div>
-    </div>
   )
 }

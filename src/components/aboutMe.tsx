@@ -27,11 +27,11 @@ export default function AboutMe() {
           </div>
         </div>
       </div>
-      <div>
+      <div className=''>
         <div className='text-center py-10 text-5xl'>
           Qualifications
         </div>
-        <div className='flex justify-around items-center'>
+        <div className='flex justify-around items-center pb-20'>
           <div className='py-10 border rounded-xl p-2 bg-pink-200 text-2xl'>
             Boise State BBA Graduate
           </div>

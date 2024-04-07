@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import Image from 'next/image'
 import Lessons from '../components/lessons'
 
 const oneHour = {
@@ -46,6 +47,40 @@ export default function BookLesson() {
       <div>
         <Lessons duration={oneHour.duration} price={oneHour.price} image={oneHour.image} />
         <Lessons duration={thirtyMinutes.duration} price={thirtyMinutes.price} image={thirtyMinutes.image} />
+      </div>
+      <div>
+        <div className='diagonal-split-background'>
+          <div className='max-w-3xl mx-auto text-center text-2xl text-blue-900 py-20'>
+            Availability is displayed on my calendar when booking a lesson. I suggest booking in advance to reserve your desired time slot
+          </div>
+        </div>
+        <div className='flex'>
+          <div>
+            <Image
+              src='/assets/images/confetti.png&quot'
+              width={500}
+              height={500}
+              alt=''
+              className='h-full'
+            />
+          </div>
+          <div className='p-10 bg-[#dedede]'>
+            <div className='text-blue-900 text-3xl'>
+              Bundle and Save!
+            </div>
+            <div className='text-5xl text-red-600'>
+              New Student Sale
+            </div>
+            <div className='text-blue-900'>
+              <div className='text-3xl pt-14 font-semibold'>
+                Book a total of 4 lessons as a bundle recieve 25%
+              </div>
+              <div className='pt-14'>
+                To receive this deal, please specify that you are interetsed in this sale during our conversation call or in the "New Student Form"
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

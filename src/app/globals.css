@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+.diagonal-split-background{
+  background-color: #013A6B;
+  background-image: -webkit-linear-gradient(101deg, #dedede 50%, #ffffff 50%);
+}

@@ -12,11 +12,11 @@ export default function ContactForm() {
   const SuccessMessage = 'Thank you for your message, we will get back to you as soon as possible.'
   const [errorMessage, setErrorMessage] = useState<string>('')
   const [sending, setSending] = useState<boolean>(false)
-
+  
   const form = useRef<HTMLFormElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
   const errorRef = useRef<HTMLDivElement>(null);
-
+  
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSending(true)
@@ -27,8 +27,9 @@ export default function ContactForm() {
       return;
     }
 
+
     if (form.current !== null) {
-      emailjs.sendForm('', '', form.current, '')
+      emailjs.sendForm(`${process.env.NEXT_PUBLIC_SERVICE_ID}`, `${process.env.NEXT_PUBLIC_TEMPLATE_ID}`, form.current, {publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY})
         .then((result) => {
           console.log(result.text)
           if (error) {
@@ -64,16 +65,6 @@ export default function ContactForm() {
     handleStatus('success', false);
   }
 
-  //clears localstorage whenever the user leaves the page
-  useEffect(() => {
-    window.onbeforeunload = function () {
-      window.localStorage.clear();
-    }
-    window.onpagehide = function () {
-      window.localStorage.clear();
-    }
-  }, []);
-
   useEffect(() => {
     if (success && successRef.current) {
       successRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -94,7 +85,7 @@ export default function ContactForm() {
         <div className="border-b border-gray-900/10 pb-12">
           <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 pt-6">
             <div className="sm:col-span-3">
-              <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900 dark:text-dark">
+              <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
                 First name
               </label>
               <div className="mt-2">
@@ -104,7 +95,7 @@ export default function ContactForm() {
                     name="firstName"
                     id="firstName"
                     autoComplete="firstName"
-                    className="outline-none block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 dark:text-dark placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    className="outline-none block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     value={formData.firstName}
                     onChange={updateFormData}
                     placeholder='John'
@@ -113,7 +104,7 @@ export default function ContactForm() {
               </div>
             </div>
             <div className="sm:col-span-3">
-              <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900 dark:text-dark">
+              <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
                 Last name
               </label>
               <div className="mt-2">
@@ -124,7 +115,7 @@ export default function ContactForm() {
                     name="lastName"
                     id="lastName"
                     autoComplete="lastName"
-                    className="outline-none block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 dark:text-dark placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    className="outline-none block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     value={formData.lastName}
                     onChange={updateFormData}
                     placeholder='Smith'
@@ -133,7 +124,7 @@ export default function ContactForm() {
               </div>
             </div>
             <div className="sm:col-span-full">
-              <label htmlFor="email" className="text-sm font-medium leading-6 text-gray-900 dark:text-dark flex justify-between items-center">
+              <label htmlFor="email" className="text-sm font-medium leading-6 text-gray-900 flex justify-between items-center">
                 Email address
                 {emailTouched && !isValidEmail(formData.email) && <span className="text-red-500 text-xs">Please enter a valid email address</span>}
               </label>
@@ -154,12 +145,12 @@ export default function ContactForm() {
                     updateFormData(e)
                   }}
                   placeholder='example@email.com'
-                  className={`outline-none block w-full bg-transparent rounded-md border-0 py-1.5 pl-1 text-gray-900 dark:text-dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ${emailTouched && !isValidEmail(formData.email) ? 'ring-2 ring-red-500 focus:outline-none focus:ring-red-500' : ''}`}
+                  className={`outline-none block w-full bg-transparent rounded-md border-0 py-1.5 pl-1 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ${emailTouched && !isValidEmail(formData.email) ? 'ring-2 ring-red-500 focus:outline-none focus:ring-red-500' : ''}`}
                 />
               </div>
             </div>
             <div className="sm:col-span-6">
-              <label htmlFor="subject" className="block text-sm font-medium leading-6 text-gray-900 dark:text-dark">
+              <label htmlFor="subject" className="block text-sm font-medium leading-6 text-gray-900">
                 Subject
               </label>
               <div className="mt-2">
@@ -169,7 +160,7 @@ export default function ContactForm() {
                     name="subject"
                     id="subject"
                     autoComplete="subject"
-                    className="outline-none block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 dark:text-dark placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    className="outline-none block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     value={formData.subject}
                     onChange={updateFormData}
                     placeholder='Wheel Chair Donation'
@@ -178,7 +169,7 @@ export default function ContactForm() {
               </div>
             </div>
             <div className="col-span-full">
-              <label htmlFor="message" className="block text-sm font-medium leading-6 text-gray-900 dark:text-dark">
+              <label htmlFor="message" className="block text-sm font-medium leading-6 text-gray-900">
                 Message
               </label>
               <div className="mt-2">
@@ -186,7 +177,7 @@ export default function ContactForm() {
                   id="message"
                   name="message"
                   rows={7}
-                  className="outline-none block bg-transparent w-full rounded-md p-2 border-0 py-1.5 text-gray-900 dark:text-dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="outline-none block bg-transparent w-full rounded-md p-2 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   value={formData.message}
                   onChange={updateFormData}
                   placeholder='Hello, I would like to donate a wheel chair.'

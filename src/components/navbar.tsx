@@ -7,6 +7,7 @@ const navigation = [
   { name: 'Book a Lesson', href: '/services', current: false },
   { name: 'About', href: '/about', current: false },
   { name: 'Policy', href: '/policy', current: false },
+  { name: 'Contact', href: '', current: false },
 ]
 
 type NavItemProps = {

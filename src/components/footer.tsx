@@ -8,6 +8,7 @@ const navigation = {
     { name: 'Book a Lesson', href: '/about' },
     { name: 'About', href: '/support' },
     { name: 'Policy', href: '/donate' },
+    { name: 'Contact', href: '' },
   ],
 }
 

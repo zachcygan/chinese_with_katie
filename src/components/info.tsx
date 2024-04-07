@@ -172,7 +172,55 @@ export default function Info() {
         </div>
       </div>
       <DottedLine />
-
+      <div className="text-center py-10">
+        <div>
+          <div className="text-red-600 text-5xl font-bold py-5">
+            Get Started in TWO Easy Steps
+          </div>
+          <div className="py-10">
+            <div className="text-white text-7xl bg-red-500 max-w-min mx-auto p-2 rounded-xl m-2">
+              01
+            </div>
+            <div className="text-red-600 font-semibold text-2xl p-2">
+              Fill out the New Student Form OR sign up for a free consultation call
+            </div>
+            <div className="text-blue-900 text-xl">
+              <div className="max-w-sm inline-block mx-auto font-semibold underline hover:scale-[1.05] transition">
+                This is for new students only
+              </div>
+              <div className="max-w-2xl mx-auto">
+                To best  suit your learning needs, this is your chance to share what you are looking for in our lessons. Let's make sure its the right fit!
+              </div>
+              <div className="flex justify-around mx-40 text-white py-5">
+                <button className="bg-blue-900 p-4 hover:scale-[1.05] transition">
+                  New Student Form {`>`}
+                </button>S
+                <button className="bg-blue-900 p-4 hover:scale-[1.05] transition">
+                  Free 15 Minutes Consultation Call {`>`}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="py-10">
+          <div className="text-white text-7xl bg-red-500 max-w-min mx-auto p-2 rounded-xl m-2">
+            02
+          </div>
+          <div className="text-red-600 font-semibold text-2xl p-2">
+            Sign up for a lesson!
+          </div>
+          <div className="text-blue-900 text-xl">
+            <div className="max-w-2xl mx-auto">
+              To sign up, select either a 30 minute or 1 hour lesson from my bookings page. The selection will navigate you to my calendar, where you can book a lesson based on my avaiablilty. After booking the lesson, you should receive a confirmation email, then you're all set!
+            </div>
+            <div className="text-white py-5">
+              <button className="bg-blue-900 p-4 hover:scale-[1.05] transition">
+                My Bookings Page {`>`}
+              </button>S
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

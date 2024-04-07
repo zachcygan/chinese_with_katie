@@ -1,6 +1,8 @@
 'use client'
 import Image from "next/image";
 import DottedLine from "./dottedLine";
+import VectorRight from "./vectorRight";
+import VectorLeft from "./vectorLeft";
 
 export default function Info() {
   return (
@@ -149,8 +151,16 @@ export default function Info() {
         </div>
       </div>
       <div className="text-blue-900 text-center text-3xl pt-20">
-        <div className="max-w-md mx-auto">
-          We'll cover the fundamentals you need to succeed:
+        <div className="flex justify-between">
+          <div className="ml-60">
+            <VectorRight />
+          </div>
+          <div className="max-w-md mx-auto">
+            We'll cover the fundamentals you need to succeed:
+          </div>
+          <div className="mr-60">
+            <VectorLeft />
+          </div>
         </div>
         <div className="max-w-md mx-auto pt-10">
           <ul className="list-disc inline-block text-start">

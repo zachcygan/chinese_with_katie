@@ -117,8 +117,8 @@ export default function Info() {
             </div>
           </div>
         </div>
-        <DottedLine />
       </div>
+      <DottedLine />
       <div>
         <div>
           <div className="text-6xl text-red-600 text-center font-bold p-10">What to expect in our lessons</div>
@@ -172,6 +172,7 @@ export default function Info() {
         </div>
       </div>
       <DottedLine />
+
     </div>
   )
 }

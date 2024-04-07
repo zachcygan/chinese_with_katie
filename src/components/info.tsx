@@ -25,7 +25,7 @@ export default function Info() {
         </div>
         <div className="text-center pt-20 text-blue-900 text-3xl font-semibold">
           <div className="p-2">
-            <span className="underline">In just a single 60 minute lesson</span>, students will be
+            <span className="underline hover:scale-[1.05]">In just a single 60 minute lesson</span>, students will be
           </div>
           <div className="p-2">
             able to communicate basic phrases and questions.
@@ -99,11 +99,6 @@ export default function Info() {
             <div className="flex-1 flex flex-col justify-center items-start">
               <div className="flex items-center justify-between">
                 <div className="py-2 text-3xl text-blue-900 font-semibold">Homework Help</div>
-                {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="24.1 24.2 151.8 151.8" viewBox="24.1 24.2 151.8 151.8" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label="" className="scale-[.3]">
-                  <g>
-                    <path d="M100 176c-5.8 0-10.3-4.7-10.3-10.3 0-23.3-32-55.3-55.3-55.3-5.8 0-10.3-4.7-10.3-10.3 0-5.7 4.7-10.3 10.3-10.3 23.3 0 55.3-32 55.3-55.3 0-5.8 4.7-10.3 10.3-10.3 5.7 0 10.3 4.7 10.3 10.3 0 23.3 32 55.3 55.3 55.3 5.8 0 10.3 4.7 10.3 10.3 0 5.7-4.7 10.3-10.3 10.3-23.3 0-55.3 32-55.3 55.3 0 5.6-4.5 10.3-10.3 10.3zM66.4 99.9c13.2 8.2 25.5 20.3 33.6 33.6 8.2-13.2 20.3-25.5 33.6-33.6-13.2-8.2-25.5-20.3-33.6-33.6-8.2 13.3-20.3 25.4-33.6 33.6z" fill="#ffb600" data-color="1"></path>
-                  </g>
-                </svg> */}
               </div>
               <div>
                 Need help on your homework? Feel free to send this to me before our lesson! We'll work through your problems and learn what areas to focus on.reports
@@ -147,7 +142,7 @@ export default function Info() {
       <DottedLine />
       <div className="text-center py-10">
         <div>
-          <div className="text-red-600 text-5xl font-bold py-5">
+          <div id='gettingStarted' className="text-red-600 text-5xl font-bold py-5">
             Get Started in TWO Easy Steps
           </div>
           <div className="py-10">

@@ -1,6 +1,10 @@
 'use client'
 
 export default function Hero() {
+  const scrollToGettingStarted = () => {
+    document.getElementById('gettingStarted')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div>
       <div className="border-2 border-red-700 p-2 bg-red-600">
@@ -18,8 +22,12 @@ export default function Hero() {
           </div>
         </div>
         <div className="text-center text-white pb-20">
-          <button type="button" className="rounded-full bg-blue-800 p-5 text-xl">
-            Get Started Today
+          <button 
+            type="button" 
+            className="rounded-full bg-blue-800 p-5 text-xl"
+            onClick={scrollToGettingStarted}
+          >
+              Get Started Today
           </button>
         </div>
       </div>

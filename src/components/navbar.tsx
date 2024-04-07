@@ -29,12 +29,12 @@ export default function Navbar() {
       <div className='flex justify-between'>
         {navigation.map((item) => {
           // const isActive = item.href === pathname;
-          const home = item.href === 'Chinese with Katie';
+          const home = item.href === '/';
           return (
             <Link
               key={item.name}
               href={item.href}
-              className={`px-5 py-2 rounded-md text-lg lg:text-2xl relative no-underline transition-all delay-150 hover:delay-0 ease-in-out ${home ? 'text-red-800' : ''}`}
+              className={`px-5 py-2 rounded-md relative no-underline transition-all delay-150 hover:delay-0 ease-in-out ${home ? 'text-red-600 font-bold text-2xl' : 'text-xl font-semibold'}`}
               aria-current={item.href === pathname ? 'page' : undefined}
               onClick={(e) => {
                 if (item.name === 'Contact') {

@@ -1,6 +1,8 @@
 'use client'
-import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+import SlideOver from './slideOver'
 
 const navigation = [
   { name: 'Chinese with Katie', href: '/', current: true},
@@ -17,6 +19,7 @@ type NavItemProps = {
 
 export default function Navbar() {
   const pathname = usePathname()
+  const [isSlideOpen, setIsSlideOpen] = useState(false)
 
   return (
     <div className={`border-b-4 m-2 mx-auto text-center py-10`}>
@@ -33,12 +36,19 @@ export default function Navbar() {
               href={item.href}
               className={`px-5 py-2 rounded-md text-lg lg:text-2xl relative no-underline transition-all delay-150 hover:delay-0 ease-in-out ${home ? 'text-red-800' : ''}`}
               aria-current={item.href === pathname ? 'page' : undefined}
+              onClick={(e) => {
+                if (item.name === 'Contact') {
+                  e.preventDefault(); // prevent navigation
+                  setIsSlideOpen(true);
+                }
+              }}
             >
               <span>{item.name}</span>
             </Link>
           );
         })}
       </div>
+      <SlideOver isOpen={isSlideOpen} onClose={() => setIsSlideOpen(false)} />
     </div>
   )
 }

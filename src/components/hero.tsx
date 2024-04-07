@@ -7,7 +7,7 @@ export default function Hero() {
   };
 
   return (
-      <div className="border-2 border-red-700 p-2 bg-red-600 mt-14 w-full">
+      <div className="border-2 border-red-700 p-2 bg-red-600 w-full">
         <div className="flex justify-end rotate-[-9deg]">
           <Image
             src='/assets/images/globe.webp'

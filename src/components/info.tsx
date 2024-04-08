@@ -111,15 +111,15 @@ export default function Info() {
       <DottedLine />
       <div>
         <div>
-          <div className="text-6xl text-red-600 text-center font-bold p-10">What to expect in our lessons</div>
+          <div className="text-3xl lg:text-6xl text-red-600 text-center font-bold p-10">What to expect in our lessons</div>
         </div>
-        <div className="flex justify-between">
+        <div className="flex flex-col lg:flex-row items-center justify-between">
           <Expectations component={Book} text='Supplemental Material' />
           <Expectations component={Whiteboard} text='Online Whiteboard' />
           <Expectations component={Conversation} text='Conversation Practice' />
         </div>
       </div>
-      <div className="text-blue-900 text-center text-3xl pt-20">
+      <div className="text-blue-900 text-center text-xl lg:text-3xl pt-20">
         <div className="flex justify-between">
           <div className="ml-60">
             <VectorRight />

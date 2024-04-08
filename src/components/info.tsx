@@ -13,7 +13,7 @@ export default function Info() {
   return (
     <div>
       <div>
-        <div className="text-center text-red-600 font-bold text-7xl pt-32">
+        <div className="text-center text-red-600 font-bold text-4xl xl:text-7xl pt-32 px-1">
           <div>
             Aiming to improve your
           </div>
@@ -35,7 +35,7 @@ export default function Info() {
             You'll be AMAZED at how much you can grow your skills!
           </div>
         </div>
-        <div className="text-center text-blue-900 text-2xl p-20">
+        <div className="text-center text-blue-900 text-xl xl:text-3xl p-2 xl:p-20">
           <div>
             My tutoring sessions are designed to meet the needs of English-speaking learners. I
           </div>
@@ -47,7 +47,7 @@ export default function Info() {
           </div>
         </div>
         <div>
-          <div className="flex justify-between items-center mx-auto max-w-4xl p-2">
+          <div className="flex justify-between flex-col lg:flex-row items-center mx-auto max-w-4xl p-2">
             <div className="flex-1 flex justify-center">
               <Image
                 src='/assets/images/info1.png'
@@ -65,7 +65,7 @@ export default function Info() {
               </div>
             </div>
           </div>
-          <div className="flex justify-between items-center mx-auto max-w-4xl p-2">
+          <div className="flex justify-between flex-col lg:flex-row items-center mx-auto max-w-4xl p-2">
             <div className="flex-1 flex flex-col justify-center items-start">
               <div className="flex items-center justify-between">
                 <div className="py-2 text-3xl text-blue-900 font-semibold">Flexability</div>
@@ -88,7 +88,7 @@ export default function Info() {
               />
             </div>
           </div>
-          <div className="flex justify-between items-center mx-auto max-w-4xl p-2">
+          <div className="flex justify-between flex-col lg:flex-row items-center mx-auto max-w-4xl p-2">
             <div className="flex-1 flex justify-center">
               <Image
                 src='/assets/images/info3.png'

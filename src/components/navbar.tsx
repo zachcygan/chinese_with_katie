@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import SlideOver from './slideOver'
@@ -11,11 +11,6 @@ const navigation = [
   { name: 'Policy', href: '/policy', current: false },
   { name: 'Contact', href: '', current: false },
 ]
-
-type NavItemProps = {
-  href: string
-  children: React.ReactNode
-}
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -43,7 +38,7 @@ export default function Navbar() {
                 }
               }}
             >
-              <span>{item.name}</span>
+              <span className=''>{item.name}</span>
             </Link>
           );
         })}

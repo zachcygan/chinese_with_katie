@@ -10,7 +10,7 @@ export default function Expectations({ component: Component, text }: Expectation
         <Component />
       </div>
       <div className="">
-        <div className="text-2xl">{text}</div>
+        <div className="text-2xl text-blue-900">{text}</div>
       </div>
     </div>
   )

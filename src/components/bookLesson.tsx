@@ -1,18 +1,21 @@
 'use client'
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import Lessons from '../components/lessons'
 
 const oneHour = {
   duration: 'One Hour',
   price: '$50',
-  image: '/assets/images/oneHourImage.webp'
+  image: '/assets/images/oneHourImage.webp',
+  link: 'https://tidycal.com/chinesewithkatie/60-minute-tutoring-session'
 }
 
 const thirtyMinutes = {
   duration: 'Thirty Minutes',
   price: '$30',
-  image: '/assets/images/thirtyMinutesImage.webp'
+  image: '/assets/images/thirtyMinutesImage.webp',
+  link: 'https://tidycal.com/chinesewithkatie/30-minute-tutoring-session'
 }
 
 export default function BookLesson() {
@@ -35,9 +38,11 @@ export default function BookLesson() {
             </div>
           </div>
           <div className="flex justify-around mx-40 pt-10">
-            <button className="border border-red-500 p-5 rounded-xl hover:scale-[1.05] active:scale[.95] transition">
-              Free Consultation Call
-            </button>
+            <Link href="https://tidycal.com/chinesewithkatie/15-minute-free-consultation-call" target='_blank'>
+              <button className="border border-red-500 p-5 rounded-xl hover:scale-[1.05] active:scale[.95] transition">
+                Free Consultation Call
+              </button>
+            </Link>
             <button className="border border-red-500 p-5 rounded-xl hover:scale-[1.05] transition">
               New Student Form
             </button>
@@ -45,8 +50,8 @@ export default function BookLesson() {
         </div>
       </div>
       <div>
-        <Lessons duration={oneHour.duration} price={oneHour.price} image={oneHour.image} />
-        <Lessons duration={thirtyMinutes.duration} price={thirtyMinutes.price} image={thirtyMinutes.image} />
+        <Lessons duration={oneHour.duration} price={oneHour.price} image={oneHour.image} link={oneHour.link} />
+        <Lessons duration={thirtyMinutes.duration} price={thirtyMinutes.price} image={thirtyMinutes.image} link={thirtyMinutes.link} />
       </div>
       <div>
         <div className='diagonal-split-background'>

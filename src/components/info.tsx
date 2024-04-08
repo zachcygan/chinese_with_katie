@@ -1,5 +1,6 @@
 'use client'
 import Image from "next/image";
+import Link from "next/link";
 import DottedLine from "./dottedLine";
 import VectorRight from "./vectorRight";
 import VectorLeft from "./vectorLeft";
@@ -140,9 +141,9 @@ export default function Info() {
         </div>
       </div>
       <DottedLine />
-      <div className="text-center py-10">
+      <div className="text-center py-10" id='gettingStarted'>
         <div>
-          <div id='gettingStarted' className="text-red-600 text-5xl font-bold py-5">
+          <div className="text-red-600 text-5xl font-bold py-5">
             Get Started in TWO Easy Steps
           </div>
           <div className="py-10">
@@ -162,10 +163,12 @@ export default function Info() {
               <div className="flex justify-around mx-40 text-white py-5">
                 <button className="bg-blue-900 p-4 hover:scale-[1.05] transition">
                   New Student Form {`>`}
-                </button>S
-                <button className="bg-blue-900 p-4 hover:scale-[1.05] transition">
-                  Free 15 Minutes Consultation Call {`>`}
                 </button>
+                <Link href='https://tidycal.com/chinesewithkatie/15-minute-free-consultation-call' target="_blank">
+                  <button className="bg-blue-900 p-4 hover:scale-[1.05] transition">
+                    Free 15 Minutes Consultation Call {`>`}
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -182,9 +185,11 @@ export default function Info() {
               To sign up, select either a 30 minute or 1 hour lesson from my bookings page. The selection will navigate you to my calendar, where you can book a lesson based on my avaiablilty. After booking the lesson, you should receive a confirmation email, then you're all set!
             </div>
             <div className="text-white py-5">
-              <button className="bg-blue-900 p-4 hover:scale-[1.05] transition">
-                My Bookings Page {`>`}
-              </button>S
+              <Link href='/services'>
+                <button className="bg-blue-900 p-4 hover:scale-[1.05] transition">
+                  My Bookings Page {`>`}
+                </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,14 +1,16 @@
 'use client'
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 
 interface LessonsProps {
   duration: string
   price: string
   image: string
+  link: string
 }
 
-export default function Lessons({ duration, price, image }: LessonsProps) {
+export default function Lessons({ duration, price, image, link }: LessonsProps) {
   return (
     <div className='py-10'>
       <div className='flex justify-between'>
@@ -37,9 +39,11 @@ export default function Lessons({ duration, price, image }: LessonsProps) {
               <div className='py-2 text-3xl'>
                 {price}
               </div>
-              <button className='p-3 mt-5 bg-red-600 text-white max-w-sm hover:scale-[1.05] transition'>
-                Sign Up Now
-              </button>
+              <Link href={link} target='_black'>
+                <button className='p-3 mt-5 bg-red-600 text-white max-w-sm hover:scale-[1.05] transition'>
+                  Sign Up Now
+                </button>
+              </Link>
             </div>
           </div>
       </div>

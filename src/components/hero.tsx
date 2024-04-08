@@ -14,7 +14,7 @@ export default function Hero() {
             width={180}
             height={180}
             alt='Globe with Chinese flag'
-            className="absolute rotate-[-10deg] scale-[.7]"
+            className="absolute rotate-[-10deg]"
           />
         </div>
         <div className="text-white font-bold">
@@ -36,7 +36,7 @@ export default function Hero() {
             width={200}
             height={200}
             alt='Fan'
-            className="absolute size-32 lg:size-40"
+            className="absolute"
           />
         </div>
         <div className="flex justify-end items-start">
@@ -44,8 +44,8 @@ export default function Hero() {
             src='/assets/images/dragon.png'
             width={350}
             height={350}
-            alt='Fan'
-            className="absolute rotate-[-20deg] size-52"
+            alt='Dragon'
+            className="absolute rotate-[-20deg]"
           />
         </div>
         <div className="text-center text-white pb-20">

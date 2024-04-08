@@ -20,7 +20,7 @@ const thirtyMinutes = {
 
 export default function BookLesson() {
   return (
-    <div>
+    <div className='px-2'>
       <div>
         <div className="text-5xl text-red-500 text-center p-10 font-bold">
           Book a Lesson Today!
@@ -37,13 +37,13 @@ export default function BookLesson() {
               call OR fill out a new student form
             </div>
           </div>
-          <div className="flex justify-around mx-40 pt-10">
+          <div className="flex justify-around max-w-2xl mx-auto pt-10">
             <Link href="https://tidycal.com/chinesewithkatie/15-minute-free-consultation-call" target='_blank'>
-              <button className="border border-red-500 p-5 rounded-xl hover:scale-[1.05] active:scale[.95] transition">
+              <button className="border border-red-500 p-5 rounded-xl hover:scale-[1.05] active:scale[.95] transition px-1">
                 Free Consultation Call
               </button>
             </Link>
-            <button className="border border-red-500 p-5 rounded-xl hover:scale-[1.05] transition">
+            <button className="border border-red-500 p-5 rounded-xl hover:scale-[1.05] transition px-1">
               New Student Form
             </button>
           </div>
@@ -59,7 +59,7 @@ export default function BookLesson() {
             Availability is displayed on my calendar when booking a lesson. I suggest booking in advance to reserve your desired time slot
           </div>
         </div>
-        <div className='flex bg-[#dedede]'>
+        <div className='flex sm:flex-col lg:flex-row bg-[#dedede]'>
           <div>
             <Image
               src='/assets/images/confetti.webp'

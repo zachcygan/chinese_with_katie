@@ -13,7 +13,7 @@ interface LessonsProps {
 export default function Lessons({ duration, price, image, link }: LessonsProps) {
   return (
     <div className='py-10'>
-      <div className='flex justify-between'>
+      <div className='flex justify-between flex-col items-center lg:flex-row'>
         <div >
           <Image
             src={image}
@@ -23,7 +23,7 @@ export default function Lessons({ duration, price, image, link }: LessonsProps) 
           />
         </div>
           <div className='text-center mx-auto'>
-            <div className='text-5xl text-blue-950 font-semibold'>
+            <div className='text-5xl text-blue-950 font-semibold mt-10 lg:mt-0'>
               {duration} Lesson
             </div>
             <div className='text-blue-900 text-xl'>

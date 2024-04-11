@@ -7,14 +7,13 @@ export default function Hero() {
   };
 
   return (
-      <div className="border-2 border-red-700 p-2 bg-red-600">
-        <div className="flex justify-end rotate-[-9deg]">
+      <div className="border-2 border-red-700 p-2 bg-red-600 relative overflow-x-clip z-0">
+        <div className="rotate-[-9deg] absolute size-40 md:size-48 z-5 -top-10 right-0">
           <Image
             src='/assets/images/globe.webp'
-            width={180}
-            height={180}
+            fill
             alt='Globe with Chinese flag'
-            className="absolute rotate-[-10deg]"
+            className="rotate-[-10deg] overflow-y-hidden"
           />
         </div>
         <div className="text-white font-bold">
@@ -39,13 +38,12 @@ export default function Hero() {
             className="absolute"
           />
         </div>
-        <div className="flex justify-end items-start">
+        <div className="absolute right-0 w-48 md:w-96 aspect-video -bottom-6 md:-bottom-12 lg:-bottom-12">
           <Image
             src='/assets/images/dragon.png'
-            width={350}
-            height={350}
+            fill
             alt='Dragon'
-            className="absolute rotate-[-20deg]"
+            className="rotate-[-20deg]"
           />
         </div>
         <div className="text-center text-white pb-20">

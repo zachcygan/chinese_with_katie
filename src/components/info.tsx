@@ -4,7 +4,6 @@ import Link from "next/link";
 import DottedLine from "./dottedLine";
 import VectorRight from "./vectorRight";
 import VectorLeft from "./vectorLeft";
-import Book from "./book";
 import Whiteboard from "./whiteboard";
 import Conversation from "./conversation";
 import Expectations from "./expectations";
@@ -114,20 +113,25 @@ export default function Info() {
           <div className="text-3xl lg:text-6xl text-red-600 text-center font-bold p-10">What to expect in our lessons</div>
         </div>
         <div className="flex flex-col lg:flex-row items-center justify-between">
-          <Expectations component={Book} text='Supplemental Material' />
+          <Expectations image='/assets/images/book.png' text='Supplemental Material' />
           <Expectations component={Whiteboard} text='Online Whiteboard' />
           <Expectations component={Conversation} text='Conversation Practice' />
         </div>
       </div>
       <div className="text-blue-900 text-center text-xl lg:text-3xl pt-20">
-        <div className="flex justify-between">
-          <div className="ml-60">
+        <div className="flex justify-center">
+          <div className="">
             <VectorRight />
           </div>
-          <div className="max-w-md mx-auto">
-            We'll cover the fundamentals you need to succeed:
+          <div>
+            <div className="mx-auto max-wd">
+              We'll cover the fundamentals 
+            </div>
+            <div>
+              you need to succeed:
+            </div>
           </div>
-          <div className="mr-60">
+          <div className="">
             <VectorLeft />
           </div>
         </div>
@@ -160,7 +164,7 @@ export default function Info() {
               <div className="max-w-2xl mx-auto">
                 To best  suit your learning needs, this is your chance to share what you are looking for in our lessons. Let's make sure its the right fit!
               </div>
-              <div className="flex justify-around mx-40 text-white py-5">
+              <div className="flex justify-around text-white py-5">
                 <button className="bg-blue-900 p-4 hover:scale-[1.05] transition">
                   New Student Form {`>`}
                 </button>

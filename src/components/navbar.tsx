@@ -65,7 +65,7 @@ export default function Navbar() {
   const [isSlideOpen, setIsSlideOpen] = useState(false)
 
   return (
-    <div className={`border-b-4 m-2 mx-auto text-center py-10 mb-14`}>
+    <div className={`border-b-4 m-2 mx-auto text-center lg:py-10`}>
       <div>
         {/* LINK FOR HOME PAGE/LOGO GOES HERE */}
       </div>

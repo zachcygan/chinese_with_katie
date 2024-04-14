@@ -4,7 +4,6 @@ import Link from "next/link";
 import DottedLine from "./dottedLine";
 import VectorRight from "./vectorRight";
 import VectorLeft from "./vectorLeft";
-import Whiteboard from "./whiteboard";
 import Conversation from "./conversation";
 import Expectations from "./expectations";
 
@@ -113,9 +112,9 @@ export default function Info() {
           <div className="text-3xl lg:text-6xl text-red-600 text-center font-bold p-10">What to expect in our lessons</div>
         </div>
         <div className="flex flex-col lg:flex-row items-center justify-between">
-          <Expectations image='/assets/images/book.png' text='Supplemental Material' />
-          <Expectations component={Whiteboard} text='Online Whiteboard' />
-          <Expectations component={Conversation} text='Conversation Practice' />
+          <Expectations image='/assets/images/book.png' text='Supplemental Material Image' />
+          <Expectations image='/assets/images/whiteboard.png' text='Online Whiteboard Image' />
+          <Expectations image='/assets/images/conversation.png' text='Conversation Practice Image' />
         </div>
       </div>
       <div className="text-blue-900 text-center text-xl lg:text-3xl pt-20">

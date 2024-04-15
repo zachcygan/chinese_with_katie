@@ -184,7 +184,7 @@ export default function Info() {
               <div className="max-w-sm inline-block mx-auto font-semibold underline hover:scale-[1.05] transition">
                 This is for new students only
               </div>
-              <div className="max-w-2xl mx-auto p-2">
+              <div className="max-w-2xl mx-auto p-20">
                 To best  suit your learning needs, this is your chance to share what you are looking for in our lessons. Let's make sure its the right fit!
               </div>
               <div className="flex flex-col md:flex-row justify-center text-white py-5">

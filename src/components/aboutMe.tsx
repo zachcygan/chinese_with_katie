@@ -4,9 +4,9 @@ import Image from 'next/image'
 export default function AboutMe() {
   return (
     <div>
-      <div className='flex border justify-items-center bg-pink-200'>
+      <div className='flex flex-col lg:flex-row border justify-items-center bg-pink-200'>
         <div className='w-full relative'>
-          <div className='abosolute inset-0'>
+          <div className='inset-0 size-80'>
             <Image
               src={'/assets/images/katie.webp'}
               fill={true}
@@ -20,9 +20,9 @@ export default function AboutMe() {
             About me
           </div>
           <div className='py-5'>
-            大家好! It's Katie — your guide to learning Mandarin!
+            <span className='text-2xl font-semibold'>大家好!</span> It's Katie — your guide to learning Mandarin!
           </div>
-          <div className='py-5 max-w-lg pb-24'>
+          <div className='py-5 max-w-lg pb-24 mx-auto'>
             Ever since I was a child, I have always been fascinated by learning foreign languages and cultures. With a new perspective gained after graduating college, I recognized a crucial demand for more engaging and effective approaches to learning Chinese. As a non-native speaker,  I've experienced the challenges of learning Chinese first hand, making me uniquely suited to understand the learning needs of English speakers. My passion lies in helping others and making education accessible. I'm excited to make your language learning journey a enriching and enjoyable experience!
           </div>
         </div>

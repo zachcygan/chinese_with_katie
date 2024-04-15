@@ -8,13 +8,13 @@ interface ExpectationsProps {
 export default function Expectations({ text, image }: ExpectationsProps) {
   return (
     <div className="flex flex-col">
-      <div className="py-20 scale-50 mx-auto hover:scale-75 transition">
+      <div className="py-2 sm:py-10 md:py-14 mx-auto hover:scale-[1.2] transition">
         {image &&
-          <div className='relative size-52'>
+          <div className='relative size-28'>
             <Image
               src={image}
               fill
-              sizes='(min-width: 640px) 640px, 100vw'
+              sizes='(min-width: 640px) 640px, 25vw'
               alt="A+"
             />
           </div>}

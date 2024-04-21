@@ -12,37 +12,21 @@ export default function Info() {
     <div>
       <div>
         <div className="text-center text-red-600 font-bold text-4xl xl:text-7xl pt-32 px-1">
-          <div>
-            Aiming to improve your
-          </div>
-          <div>
-            grade or begin your
-          </div>
-          <div>
-            learning journey?
-          </div>
+          If you're looking to <span className="underline">raise your child's grade</span>, you've come to the right place
         </div>
         <div className="text-center pt-7 text-blue-900 text-3xl font-semibold">
-          <div className="p-2 max-w-xl mx-auto">
-            <span className="underline hover:scale-[1.05]">In just a single 60 minute lesson</span>, students will be able to communicate basic phrases and questions. You'll be AMAZED at how much you can grow your skills!
+          <div className="p-2 max-w-xl mx-auto my-10">
+            With structured lessons,  students can have a clear pathway for continuous improvement.  Strengthen:
           </div>
-          {/* <div className="p-2">
-            able to communicate basic phrases and questions.
-          </div>
-          <div className="p-2">
-            You'll be AMAZED at how much you can grow your skills!
-          </div> */}
         </div>
-        <div className="text-center text-blue-900 text-xl xl:text-3xl m-2 xl:m-10">
-          <div>
-            My tutoring sessions are designed to meet the needs of English-speaking learners. I
-          </div>
-          <div>
-            guide beginning and intermediate Mandarin learners through language essentials to
-          </div>
-          <div>
-            gain a strong foundation.
-          </div>
+        <div className="flex flex-col lg:flex-row justify-center text-white text-2xl py-10">
+          <div className="mx-5 flex-1 items-center bg-red-600 p-3 rounded-lg text-center hover:scale-105 transition">Correct Pronunciation</div>
+          <div className="mx-5 flex-1 bg-red-600 p-3 rounded-lg text-center hover:scale-105 transition">Conversational Skills</div>
+          <div className="mx-5 flex-1 bg-red-600 p-3 rounded-lg text-center flex items-center justify-center hover:scale-105 transition">Grammar</div>
+          <div className="mx-5 flex-1 bg-red-600 p-3 rounded-lg text-centerr flex items-center justify-center hover:scale-105 transition"> Reading Skills</div>
+        </div>
+        <div className="text-center text-blue-900 text-2xl xl:text-4xl m-2 xl:m-10">
+          My tutoring service is designed for <span className="font-bold">beginning and intermediate Mandarin learners</span>, focusing on the needs of native English speakers.
         </div>
         <div>
           <div className="flex justify-between flex-col lg:flex-row items-center mx-auto max-w-4xl p-2">
@@ -128,6 +112,47 @@ export default function Info() {
               </div>
             </div>
           </div>
+          <div className="md:flex justify-between flex-col lg:flex-row items-center mx-auto max-w-4xl p-2 hidden md:display-block">
+            <div className="flex-1 flex flex-col justify-center items-start">
+              <div className="mx-auto lg:mx-0">
+                <div className="py-2 text-3xl text-blue-900 font-semibold">Student Feedback For Parents</div>
+              </div>
+              <div>
+                <div className="text-xl sm:text-2xl lg:text-xl m-2 text-center lg:text-left sm:m-0">
+                  It's always important to view your child's progress. After each lesson,  parents will receive personalized progress reports, identifying areas for improvement and displaying achievements.
+                </div>
+              </div>
+            </div>
+            <div className="flex-1 flex justify-center py-2 hover:scale-[1.1] transition">
+              <Image
+                src='/assets/images/info4.png'
+                width={250}
+                height={250}
+                alt='A+'
+              />
+            </div>
+          </div>
+          {/* mobile view */}
+          <div className="flex justify-between flex-col lg:flex-row items-center mx-auto max-w-4xl p-2 md:hidden">
+            <div className="flex-1 flex justify-center py-2 hover:scale-[1.1] transition">
+              <Image
+                src='/assets/images/info4.png'
+                width={250}
+                height={250}
+                alt='A+'
+              />
+            </div>
+            <div className="">
+              <div className="text-center lg:mx-0">
+                <div className="py-2 text-3xl text-blue-900 font-semibold">Student Feedback for Parents</div>
+              </div>
+              <div>
+                <div className="text-xl sm:text-2xl lg:text-xl m-2 text-center lg:text-left sm:m-0">
+                  It's always important to view your child's progress. After each lesson, parents will receive personalized progress reports, identifying areas for improvement and displaying achievements.
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <DottedLine />
@@ -148,7 +173,7 @@ export default function Info() {
           </div>
           <div>
             <div className="mx-auto max-wd">
-              We'll cover the fundamentals 
+              We'll cover the fundamentals
             </div>
             <div>
               you need to succeed:
@@ -184,7 +209,7 @@ export default function Info() {
               <div className="max-w-sm inline-block mx-auto font-semibold underline hover:scale-[1.05] transition">
                 This is for new students only
               </div>
-              <div className="max-w-2xl mx-auto p-20">
+              <div className="max-w-2xl mx-auto p-8">
                 To best  suit your learning needs, this is your chance to share what you are looking for in our lessons. Let's make sure its the right fit!
               </div>
               <div className="flex flex-col md:flex-row justify-center text-white py-5">

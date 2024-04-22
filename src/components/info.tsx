@@ -4,28 +4,27 @@ import Link from "next/link";
 import DottedLine from "./dottedLine";
 import VectorRight from "./vectorRight";
 import VectorLeft from "./vectorLeft";
-import Conversation from "./conversation";
 import Expectations from "./expectations";
 
 export default function Info() {
   return (
     <div>
       <div>
-        <div className="text-center text-red-600 font-bold text-4xl xl:text-7xl pt-32 px-1">
+        <div className="text-center text-red-600 font-bold text-4xl xl:text-7xl pt-14 lg:pt-32">
           If you're looking to <span className="underline">raise your child's grade</span>, you've come to the right place
         </div>
-        <div className="text-center pt-7 text-blue-900 text-3xl font-semibold">
-          <div className="p-2 max-w-xl mx-auto my-10">
-            With structured lessons,  students can have a clear pathway for continuous improvement.  Strengthen:
+        <div className="text-center pt-7 text-blue-900 text-4xl font-semibold">
+          <div className="p-2 max-w-2xl mx-auto my-2 lg:my-10">
+            With structured lessons,  students can have a clear pathway for continuous improvement. Strengthen:
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row justify-center text-white text-2xl py-10">
-          <div className="mx-5 flex-1 items-center bg-red-600 p-3 rounded-lg text-center hover:scale-105 transition">Correct Pronunciation</div>
-          <div className="mx-5 flex-1 bg-red-600 p-3 rounded-lg text-center hover:scale-105 transition">Conversational Skills</div>
-          <div className="mx-5 flex-1 bg-red-600 p-3 rounded-lg text-center flex items-center justify-center hover:scale-105 transition">Grammar</div>
-          <div className="mx-5 flex-1 bg-red-600 p-3 rounded-lg text-centerr flex items-center justify-center hover:scale-105 transition"> Reading Skills</div>
+        <div className="flex flex-col lg:flex-row justify-center items-center text-white text-2xl lg:text-3xl py-2 lg:py-10">
+          <div className="max-w-sm lg:mx-5 my-1 flex-1 bg-red-600 p-3 rounded-lg text-center hover:scale-105 transition">Correct Pronunciation</div>
+          <div className="max-w-sm lg:mx-5 my-1 flex-1 bg-red-600 p-3 rounded-lg text-center hover:scale-105 transition">Conversational Skills</div>
+          <div className="max-w-sm lg:mx-5 my-1 flex-1 bg-red-600 p-3 rounded-lg text-center flex items-center justify-center hover:scale-105 transition">Grammar</div>
+          <div className="max-w-sm lg:mx-5 my-1 flex-1 bg-red-600 p-3 rounded-lg text-center flex items-center justify-center hover:scale-105 transition"> Reading Skills</div>
         </div>
-        <div className="text-center text-blue-900 text-2xl xl:text-4xl m-2 xl:m-10">
+        <div className="text-center text-blue-900 text-3xl lg:text-4xl m-2 mt-10 lg:m-10">
           My tutoring service is designed for <span className="font-bold">beginning and intermediate Mandarin learners</span>, focusing on the needs of native English speakers.
         </div>
         <div>
@@ -172,10 +171,10 @@ export default function Info() {
             <VectorRight />
           </div>
           <div>
-            <div className="mx-auto max-wd">
+            <div className="text-2xl lg:text-3xl">
               We'll cover the fundamentals
             </div>
-            <div>
+            <div className="text-2xl lg:text-3xl">
               you need to succeed:
             </div>
           </div>

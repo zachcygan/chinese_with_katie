@@ -14,7 +14,7 @@ export default function Lessons({ duration, price, image, link }: LessonsProps) 
   return (
     <div className='py-10'>
       <div className='flex justify-between flex-col items-center lg:flex-row'>
-        <div >
+        <div className='px-1'>
           <Image
             src={image}
             width={500}
@@ -30,11 +30,13 @@ export default function Lessons({ duration, price, image, link }: LessonsProps) 
               <div>
                 Designed for Beginners / Intermediate
               </div>
-              <div className='pt-5'>
-                Monday - Friday,
-              </div>
-              <div>
-                5:30pm - 9pm MST
+              <div className='my-2 lg:py-5'>
+                <div className=''>
+                  Monday - Friday,
+                </div>
+                <div>
+                  5:30pm - 9pm MST
+                </div>
               </div>
               <div className='py-2 text-3xl'>
                 {price}

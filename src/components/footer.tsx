@@ -39,7 +39,7 @@ export default function Footer() {
         </nav>
         <div className='text-center'>
           <p className="mt-10 text-center text-2xl leading-5 text-white">
-            &copy; Chinese with Katie, Inc. All rights reserved.
+            &copy; Katie's Chinese Guide, Inc. All rights reserved.
           </p>
           <div className='mt-5 text-xl text-white'>
             Private Chinese Tutor

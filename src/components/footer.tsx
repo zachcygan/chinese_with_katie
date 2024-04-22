@@ -1,16 +1,20 @@
 'use client'
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import SlideOver from './slideOver'
 
 const navigation = [
   { name: `Katie's Chinese Guide`, href: '/' },
-  { name: 'Book a Lesson', href: '/about' },
-  { name: 'About', href: '/support' },
-  { name: 'Policy', href: '/donate' },
-  { name: 'Contact', href: '' },
+  { name: 'Book a Lesson', href: '/services' },
+  { name: 'About', href: '/about' },
+  { name: 'Policy', href: '/policy' },
+  { name: 'Contact', href: '#' },
 ]
 
 export default function Footer() {
+  const [isSlideOpen, setIsSlideOpen] = useState<boolean>(false)
+
   return (
     <footer className="top-[100vh] bg-blue-900">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8 ">
@@ -20,6 +24,12 @@ export default function Footer() {
               <Link href={item.href}>
                 <div
                   className="leading-6 text-white text-center text-xl"
+                  onClick={(e) => {
+                    if (item.name === 'Contact') {
+                      e.preventDefault(); // prevent navigation
+                      setIsSlideOpen(true);
+                    }
+                  }}
                 >
                   {item.name}
                 </div>
@@ -43,6 +53,7 @@ export default function Footer() {
           className='mx-auto'
         />
       </div>
+      <SlideOver isOpen={isSlideOpen} onClose={() => setIsSlideOpen(false)} />
     </footer>
   )
 }

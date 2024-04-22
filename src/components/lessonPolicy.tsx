@@ -40,7 +40,7 @@ export default function LessonPolicy() {
             Exceptions to this policy may be made at the discretion of the tutor.
           </div>
           <div className="text-blue-900 text-2xl pb-10">
-            Contact me at chinesewithkatie@gmail.com  if you have any questions or concerns about cancellation and rescheduling
+            Contact me at katieschineseguide@gmail.com  if you have any questions or concerns about cancellation and rescheduling
           </div>
         </div>
       </div>

@@ -38,13 +38,10 @@ export default function Hero() {
           className="rotate-[-10deg] overflow-y-hidden"
         />
       </div>
-      <div className="text-white font-bold text-2xl lg:text-5xl 2xl:text-7xl">
+      <div className="text-white font-bold">
         <div className="pt-20 pb-10 hiddenTransition">
-          <div className="text-center  text-wrap">
-            Rise Your Child's
-          </div>
-          <div className="text-center">
-            Grade Today!
+          <div className="text-center text-4xl text-wrap">
+            Raise Your Child's Grade Today!
           </div>
         </div>
         <div className="text-center sm:text-2xl lg:text-4xl 2xl:text-3xl pb-10 hiddenTransition">

@@ -12,7 +12,7 @@ type NavItemProps = {
 type SVGProps = React.SVGAttributes<SVGSVGElement>;
 
 const navigation = [
-  { name: 'Chinese with Katie', href: '/', current: true },
+  { name: `Katie's Chinese Guide`, href: '/', current: true },
   { name: 'Book a Lesson', href: '/services', current: false },
   { name: 'About', href: '/about', current: false },
   { name: 'Policy', href: '/policy', current: false },
@@ -115,7 +115,7 @@ export default function Navbar() {
                           </div>
                           <nav className="mt-6">
                             <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                              <MobileNavItem href="/">Chinese With Kaite</MobileNavItem>
+                              <MobileNavItem href="/">Homepage</MobileNavItem>
                               <MobileNavItem href="/services">Book a Lesson</MobileNavItem>
                               <MobileNavItem href="/about">About</MobileNavItem>
                               <MobileNavItem href="/policy">Policy</MobileNavItem>

@@ -46,7 +46,7 @@ export default function Expectations({ text, image }: ExpectationsProps) {
   }, []);
 
   return (
-    <div className="flex flex-col hiddenTransitionLeft">
+    <div className="flex flex-col">
       <div className="py-2 sm:py-10 md:py-14 mx-auto hover:scale-[1.2] transition">
         {image &&
           <div className='relative size-28'>
@@ -59,7 +59,7 @@ export default function Expectations({ text, image }: ExpectationsProps) {
           </div>}
       </div>
       <div className="">
-        <div className="text-2xl text-blue-900 hiddenTransitionLeft">{text}</div>
+        <div className="text-2xl text-blue-900">{text}</div>
       </div>
     </div>
   )

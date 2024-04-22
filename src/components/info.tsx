@@ -49,23 +49,23 @@ export default function Info() {
   return (
     <div>
       <div>
-        <div className="text-center text-red-600 font-bold text-4xl xl:text-7xl pt-14 lg:pt-32 hiddenTransition">
+        <div className="text-center text-red-600 font-bold text-3xl xl:text-7xl pt-14 lg:pt-32 hiddenTransition">
           If you're looking to <span className="underline">raise your child's grade</span>, you've come to the right place
         </div>
-        <div className="text-center pt-7 text-blue-900 text-4xl font-semibold">
+        <div className="text-center pt-7 text-blue-900 text-2xl font-semibold">
           <div className="p-2 max-w-2xl mx-auto my-2 lg:my-10 hiddenTransition">
             With structured lessons,  students can have a clear pathway for continuous improvement. Strengthen:
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row justify-center items-center text-white text-2xl lg:text-3xl py-2 lg:py-10">
+        <div className="flex flex-col lg:flex-row justify-center items-center text-white text-xl lg:text-3xl py-2 lg:py-10">
           <div className="hiddenTransitionLeft delayAnimation">
             <div className="max-w-sm lg:mx-5 my-1 flex-1 bg-red-600 p-3 rounded-lg text-center hover:scale-105">
-                Correct Pronunciation
+              Correct Pronunciation
             </div>
           </div>
           <div className="hiddenTransitionLeft delayAnimation">
             <div className="max-w-sm lg:mx-5 my-1 flex-1 bg-red-600 p-3 rounded-lg text-center hover:scale-105">
-                Conversational Skills
+              Conversational Skills
             </div>
           </div>
           <div className="hiddenTransitionLeft delayAnimation">
@@ -79,7 +79,7 @@ export default function Info() {
             </div>
           </div>
         </div>
-        <div className="text-center text-blue-900 text-3xl lg:text-4xl m-2 mt-10 lg:m-10 hiddenTransition">
+        <div className="text-center text-blue-900 text-xl lg:text-4xl m-2 mt-10 lg:m-10 hiddenTransition">
           My tutoring service is designed for <span className="font-bold">beginning and intermediate Mandarin learners</span>, focusing on the needs of native English speakers.
         </div>
         <div>
@@ -91,14 +91,13 @@ export default function Info() {
                   width={250}
                   height={250}
                   alt='A+'
-                  className=""
                 />
               </div>
               <div className="flex-1 flex flex-col justify-center items-start">
                 <div className="mx-auto lg:mx-0">
-                  <div className="py-2 text-3xl text-blue-900 font-semibold">Structured Lesson Plans</div>
+                  <div className="py-2 text-2xl lg:text-3xl text-blue-900 font-semibold">Structured Lesson Plans</div>
                 </div>
-                <div className="text-xl sm:text-2xl lg:text-xl m-2 text-center lg:text-left sm:m-0">
+                <div className="text-lg sm:text-xl lg:text-2xl m-1 text-center lg:text-left sm:m-0">
                   In my lessons, students can expect to learn with a lesson plan suited for their language level. To supplement, we'll additionally use workbooks and flashcards. Each student will have access to the lesson plan and notes used in our sessions and parents will receive personalized progress reports
                 </div>
               </div>
@@ -108,13 +107,13 @@ export default function Info() {
             <div className="md:flex justify-between flex-col lg:flex-row items-center mx-auto max-w-4xl p-2 hidden md:display-block">
               <div className="flex-1 flex flex-col justify-center items-start">
                 <div className="mx-auto lg:mx-0">
-                  <div className="py-2 text-3xl text-blue-900 font-semibold">Flexability</div>
+                  <div className="py-2 text-2xl lg:text-3xl text-blue-900 font-semibold">Flexability</div>
                 </div>
                 <div>
-                  <div className="text-xl sm:text-2xl lg:text-xl m-2 text-center lg:text-left sm:m-0">
+                  <div className="text-lg sm:text-xl lg:text-2xl m-1 text-center lg:text-left sm:m-0">
                     Being an online tutor makes it easy for me to be accommodating of your schedule! My hours for tutoring are  from Monday to Friday, 5:30pm -9pm MST .
                   </div>
-                  <div className="p-1 italic font-semibold">
+                  <div className="p-1 lg:text-md italic font-semibold">
                     *Ensure to check availability and reserve your spot.
                   </div>
                 </div>
@@ -143,13 +142,13 @@ export default function Info() {
               </div>
               <div className="hiddenTransition">
                 <div className="text-center lg:mx-0">
-                  <div className="py-2 text-3xl text-blue-900 font-semibold">Flexability</div>
+                  <div className="py-2 text-2xl lg:text-3xl text-blue-900 font-semibold">Flexability</div>
                 </div>
                 <div>
-                  <div className="text-xl sm:text-2xl lg:text-xl m-2 text-center lg:text-left sm:m-0">
+                  <div className="text-xl sm:text-2xl lg:text-xl m-1 text-center lg:text-left sm:m-0">
                     Being an online tutor makes it easy for me to be accommodating of your schedule! My hours for tutoring are  from Monday to Friday, 5:30pm -9pm MST .
                   </div>
-                  <div className="p-1 italic font-semibold text-lg sm:text-xl text-center">
+                  <div className="p-1 italic font-semibold text-sm sm:text-xl text-center">
                     *Ensure to check availability and reserve your spot.
                   </div>
                 </div>
@@ -168,9 +167,9 @@ export default function Info() {
               </div>
               <div className="flex-1 flex flex-col justify-center items-start">
                 <div className="mx-auto lg:mx-0">
-                  <div className="py-2 text-3xl text-blue-900 font-semibold">Homework Help</div>
+                  <div className="py-2 text-2xl lg:text-3xl text-blue-900 font-semibold">Homework Help</div>
                 </div>
-                <div className="text-xl sm:text-2xl lg:text-xl m-2 text-center lg:text-left sm:m-0">
+                <div className="text-lg sm:text-xl lg:text-3xl m-1 text-center lg:text-left sm:m-0">
                   Need help on your homework? Feel free to send this to me before our lesson! We'll work through your problems and learn what areas to focus on.reports
                 </div>
               </div>
@@ -180,10 +179,10 @@ export default function Info() {
             <div className="md:flex justify-between flex-col lg:flex-row items-center mx-auto max-w-4xl p-2 hidden md:display-block">
               <div className="flex-1 flex flex-col justify-center items-start">
                 <div className="mx-auto lg:mx-0">
-                  <div className="py-2 text-3xl text-blue-900 font-semibold">Student Feedback For Parents</div>
+                  <div className="py-2 text-2xl lg:text-3xl text-blue-900 font-semibold">Student Feedback For Parents</div>
                 </div>
                 <div>
-                  <div className="text-xl sm:text-2xl lg:text-xl m-2 text-center lg:text-left sm:m-0">
+                  <div className="text-lg sm:text-xl lg:text-2xl m-1 text-center lg:text-left sm:m-0">
                     It's always important to view your child's progress. After each lesson,  parents will receive personalized progress reports, identifying areas for improvement and displaying achievements.
                   </div>
                 </div>
@@ -211,10 +210,10 @@ export default function Info() {
               </div>
               <div className="">
                 <div className="text-center lg:mx-0">
-                  <div className="py-2 text-3xl text-blue-900 font-semibold">Student Feedback for Parents</div>
+                  <div className="py-2 text-2xl lg:text-3xl text-blue-900 font-semibold">Student Feedback for Parents</div>
                 </div>
                 <div>
-                  <div className="text-xl sm:text-2xl lg:text-xl m-2 text-center lg:text-left sm:m-0">
+                  <div className="text-lg sm:text-xl lg:text-2xl m-1 text-center lg:text-left sm:m-0">
                     It's always important to view your child's progress. After each lesson, parents will receive personalized progress reports, identifying areas for improvement and displaying achievements.
                   </div>
                 </div>
@@ -229,9 +228,15 @@ export default function Info() {
           <div className="text-3xl lg:text-6xl text-red-600 text-center font-bold p-10">What to expect in our lessons</div>
         </div>
         <div className="flex flex-col lg:flex-row items-center justify-between delay">
-          <Expectations image='/assets/images/book.png' text='Supplemental Material Image' />
-          <Expectations image='/assets/images/whiteboard.png' text='Online Whiteboard Image' />
-          <Expectations image='/assets/images/conversation.png' text='Conversation Practice Image' />
+          <div className="hiddenTransitionLeft delayAnimation">
+            <Expectations image='/assets/images/book.png' text='Supplemental Material Image' />
+          </div>
+          <div className="hiddenTransitionLeft delayAnimation">
+            <Expectations image='/assets/images/whiteboard.png' text='Online Whiteboard Image' />
+          </div>
+          <div className="hiddenTransitionLeft delayAnimation">
+            <Expectations image='/assets/images/conversation.png' text='Conversation Practice Image' />
+          </div>
         </div>
       </div>
       <div className="text-blue-900 text-center text-xl lg:text-3xl pt-20">

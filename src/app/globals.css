@@ -53,3 +53,9 @@
 .delayAnimation:nth-child(6) {
   transition-delay: 550ms;
 }
+
+@media(prefers-reduced-motion: reduce){
+  .hiddenTransition, .hiddenTransitionLeft, .hiddenTransitionRight, .show, .delayAnimation {
+    transition: none;
+  }
+}

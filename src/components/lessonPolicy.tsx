@@ -9,7 +9,7 @@ export default function LessonPolicy() {
       <div className="text-center font-semibold text-3xl lg:text-5xl my-10 lg:p-10 text-blue-900">
         Lesson Policy
       </div>
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto px-2">
         <div className="pb-10">
           <div className="font-bold text-2xl text-blue-950">
             Cancellation Policy:

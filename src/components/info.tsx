@@ -268,7 +268,7 @@ export default function Info() {
       <DottedLine />
       <div className="text-center py-10" id='gettingStarted'>
         <div className="hiddenTransition">
-          <div className="text-red-600 text-5xl font-bold py-5">
+          <div className="text-red-600 text-2xl lg:text-4xl font-bold py-5">
             Get Started in TWO Easy Steps
           </div>
           <div className="py-10">

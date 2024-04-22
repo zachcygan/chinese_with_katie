@@ -6,7 +6,7 @@ const policies = [
 export default function LessonPolicy() {
   return (
     <div>
-      <div className="text-center text-5xl p-20 text-blue-900">
+      <div className="text-center font-semibold text-3xl lg:text-5xl my-10 lg:p-10 text-blue-900">
         Lesson Policy
       </div>
       <div className="max-w-4xl mx-auto">

@@ -34,7 +34,7 @@ export default function BookLesson() {
           <div className="text-center text-3xl lg:text-4xl lg:max-w-xl text-blue-900">
             <span className='underline font-semibold'>If you are new to my services</span>, please ensure to sign up for a free consultation
           </div>
-          <div className='scale-105 lg:scale-[1.75]'>
+          <div className='scale-1050 lg:scale-[1.75]'>
             <VectorLeft />
           </div>
         </div>

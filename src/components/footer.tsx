@@ -2,26 +2,24 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const navigation = {
-  main: [
-    { name: 'Chinese with Kaite', href: '/'},
-    { name: 'Book a Lesson', href: '/about' },
-    { name: 'About', href: '/support' },
-    { name: 'Policy', href: '/donate' },
-    { name: 'Contact', href: '' },
-  ],
-}
+const navigation = [
+  { name: `Katie's Chinese Guide`, href: '/' },
+  { name: 'Book a Lesson', href: '/about' },
+  { name: 'About', href: '/support' },
+  { name: 'Policy', href: '/donate' },
+  { name: 'Contact', href: '' },
+]
 
 export default function Footer() {
   return (
     <footer className="top-[100vh] bg-blue-900">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8 ">
-        <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
-          {navigation.main.map((item) => (
+        <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12 sm:items-center" aria-label="Footer">
+          {navigation.map((item) => (
             <div key={item.name} className="pb-6">
               <Link href={item.href}>
-                <div 
-                  className="leading-6 text-white dark:text-dark text-3xl"
+                <div
+                  className="leading-6 text-white text-center text-xl"
                 >
                   {item.name}
                 </div>

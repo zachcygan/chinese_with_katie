@@ -1,6 +1,5 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import { PhotoIcon } from '@heroicons/react/24/solid'
 import { useFormData } from './formContext'
 import emailjs from '@emailjs/browser'
 import Error from './error'
@@ -89,7 +88,7 @@ export default function ContactForm() {
                 First name
               </label>
               <div className="mt-2">
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600 sm:max-w-md">
                   <input
                     type="text"
                     name="firstName"
@@ -108,7 +107,7 @@ export default function ContactForm() {
                 Last name
               </label>
               <div className="mt-2">
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600 sm:max-w-md">
                   {/* <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm">Smith</span> */}
                   <input
                     type="text"
@@ -145,7 +144,7 @@ export default function ContactForm() {
                     updateFormData(e)
                   }}
                   placeholder='example@email.com'
-                  className={`outline-none block w-full bg-transparent rounded-md border-0 py-1.5 pl-1 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ${emailTouched && !isValidEmail(formData.email) ? 'ring-2 ring-red-500 focus:outline-none focus:ring-red-500' : ''}`}
+                  className={`outline-none block w-full bg-transparent rounded-md border-0 py-1.5 pl-1 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6 ${emailTouched && !isValidEmail(formData.email) ? 'ring-2 ring-red-500 focus:outline-none focus:ring-red-500' : ''}`}
                 />
               </div>
             </div>
@@ -154,7 +153,7 @@ export default function ContactForm() {
                 Subject
               </label>
               <div className="mt-2">
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600">
                   <input
                     type="text"
                     name="subject"
@@ -163,7 +162,7 @@ export default function ContactForm() {
                     className="outline-none block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     value={formData.subject}
                     onChange={updateFormData}
-                    placeholder='Wheel Chair Donation'
+                    placeholder='Weekend Availability'
                   />
                 </div>
               </div>
@@ -177,10 +176,10 @@ export default function ContactForm() {
                   id="message"
                   name="message"
                   rows={7}
-                  className="outline-none block bg-transparent w-full rounded-md p-2 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="outline-none block bg-transparent w-full rounded-md p-2 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                   value={formData.message}
                   onChange={updateFormData}
-                  placeholder='Hello, I would like to donate a wheel chair.'
+                  placeholder='Hello, I would like to know if you are available this upcoming weekend on Saturday at 5pm MST.'
                 />
               </div>
             </div>
@@ -191,7 +190,7 @@ export default function ContactForm() {
       <div className="mt-6 flex items-center justify-end gap-x-6">
         <button
           type="submit"
-          className={`rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
+          className={`rounded-md bg-blue-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
           disabled={sending}
         >
           {sending ? (

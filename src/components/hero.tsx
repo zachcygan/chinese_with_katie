@@ -1,4 +1,5 @@
 'use client'
+import { useEffect } from "react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -6,8 +7,29 @@ export default function Hero() {
     document.getElementById('gettingStarted')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show')
+        }
+      })
+    });
+    const hiddenElements = document.querySelectorAll('.hiddenTransition');
+    hiddenElements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    // Cleanup observer on component unmount
+    return () => {
+      hiddenElements.forEach((element) => {
+        observer.unobserve(element);
+      });
+    };
+  }, []);
+
   return (
-    <div className="border-2 border-red-700 p-2 bg-red-600 relative overflow-x-clip z-0">
+    <div className="border-2 border-red-700 p-2 bg-red-600 relative overflow-x-clip">
       <div className="rotate-[-9deg] absolute size-40 sm:size-44 md:size-48 z-5 -top-10 right-0">
         <Image
           src='/assets/images/globe.webp'
@@ -17,7 +39,7 @@ export default function Hero() {
         />
       </div>
       <div className="text-white font-bold text-2xl lg:text-5xl 2xl:text-7xl">
-        <div className="pt-20 pb-10">
+        <div className="pt-20 pb-10 hiddenTransition">
           <div className="text-center  text-wrap">
             Rise Your Child's
           </div>
@@ -25,7 +47,7 @@ export default function Hero() {
             Grade Today!
           </div>
         </div>
-        <div className="text-center sm:text-2xl lg:text-4xl 2xl:text-3xl pb-10">
+        <div className="text-center sm:text-2xl lg:text-4xl 2xl:text-3xl pb-10 hiddenTransition">
           Personalized tutoring can make all the difference
         </div>
       </div>
@@ -48,7 +70,7 @@ export default function Hero() {
       <div className="text-center text-white pb-20">
         <button
           type="button"
-          className="rounded-full bg-blue-800 p-5 text-md lg:text-lg xl:text-xl"
+          className="rounded-full bg-blue-800 p-5 text-md lg:text-lg xl:text-xl hiddenTransition"
           onClick={scrollToGettingStarted}
         >
           Get Started Today

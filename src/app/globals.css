@@ -6,3 +6,50 @@
   background-color: #013A6B;
   background-image: -webkit-linear-gradient(101deg, #dedede 50%, #ffffff 50%);
 }
+
+.hiddenTransition {
+  opacity: 0%;
+  filter: blur(0px);
+  transform: translateY(-50%);
+  transition: all 1s;
+}
+
+.hiddenTransitionLeft {
+  opacity: 0%;
+  filter: blur(0px);
+  transform: translateX(-50%);
+  transition: all 1s;
+}
+
+.hiddenTransitionRight {
+  opacity: 0%;
+  filter: blur(0px);
+  transform: translateX(50%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0) translateX(0);
+}
+
+.delayAnimation:nth-child(2) {
+  transition-delay: 150ms;
+}
+
+.delayAnimation:nth-child(3) {
+  transition-delay: 250ms;
+}
+
+.delayAnimation:nth-child(4) {
+  transition-delay: 350ms;
+}
+
+.delayAnimation:nth-child(5) {
+  transition-delay: 450ms;
+}
+
+.delayAnimation:nth-child(6) {
+  transition-delay: 550ms;
+}

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { useEffect } from "react";
 import { Inter } from "next/font/google";
 import { FormDataProvider } from "../components/formContext";
 import "./globals.css";
+import ScheduleLessonButton from "../components/scheduleLessonButton";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
@@ -13,11 +15,7 @@ export const metadata: Metadata = {
   description: "Learn chinese with Katie!",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
       <body className={`max-w-6xl mx-auto ${inter.className}`}>
@@ -26,12 +24,13 @@ export default function RootLayout({
             <Navbar />
           </header>
           <div>
+            <ScheduleLessonButton />
             {children}
           </div>
           <div>
             <Footer />
           </div>
-        </FormDataProvider> 
+        </FormDataProvider>
       </body>
     </html>
   );

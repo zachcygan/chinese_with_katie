@@ -70,7 +70,7 @@ export default function Hero() {
           className="rounded-full bg-blue-800 p-5 text-md lg:text-lg xl:text-xl hiddenTransition"
           onClick={scrollToGettingStarted}
         >
-          Get Started Today
+          Booke a Lesson Now!
         </button>
       </div>
     </div>

@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import { useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Lessons from '../components/lessons'
@@ -21,20 +22,66 @@ const thirtyMinutes = {
 }
 
 export default function BookLesson() {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll('.hiddenTransition');
+    hiddenElements.forEach((element) => {
+      observer.observe(element);
+    });
+    
+    const transitionInElements = document.querySelectorAll('.transitionIn');
+    transitionInElements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    const hiddenElementsRight = document.querySelectorAll('.hiddenTransitionRight'); // Use separate variable for hiddenTransitionRight
+    hiddenElementsRight.forEach((element) => {
+      observer.observe(element);
+    });
+
+    const hiddenElementsLeft = document.querySelectorAll('.hiddenTransitionLeft'); // Use separate variable for hiddenTransitionLeft
+    hiddenElementsLeft.forEach((element) => {
+      observer.observe(element);
+    });
+
+    // Cleanup observer on component unmount
+    return () => {
+      hiddenElements.forEach((element) => {
+        observer.unobserve(element);
+      });
+      transitionInElements.forEach((element) => {
+        observer.unobserve(element);
+      });
+      hiddenElementsRight.forEach((element) => {
+        observer.unobserve(element);
+      });
+      hiddenElementsLeft.forEach((element) => {
+        observer.unobserve(element);
+      });
+    };
+  }, []);
+
   return (
-    <div className=''>
+    <div>
       <div>
         <div className="text-3xl lg:text-5xl text-red-500 text-center my-10 lg:p-10 font-bold">
           Book a Lesson Today!
         </div>
         <div className='flex justify-center items-center mb-3 lg:mb-10'>
-          <div className='scale-105 lg:scale-[1.75]'>
+          <div className='scale-105 lg:scale-[1.75] hiddenTransitionLeft'>
             <VectorRight />
           </div>
-          <div className="text-center text-3xl lg:text-4xl lg:max-w-xl text-blue-900">
+          <div className="text-center text-3xl lg:text-4xl lg:max-w-xl text-blue-900 transitionIn">
             <span className='underline font-semibold'>If you are new to my services</span>, please ensure to sign up for a free consultation
           </div>
-          <div className='scale-1050 lg:scale-[1.75]'>
+          <div className='scale-1050 lg:scale-[1.75] hiddenTransitionRight'>
             <VectorLeft />
           </div>
         </div>

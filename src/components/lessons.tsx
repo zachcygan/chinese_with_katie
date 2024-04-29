@@ -20,29 +20,30 @@ export default function Lessons({ duration, price, image, link }: LessonsProps) 
             width={500}
             height={500}
             alt="lesson image"
+            className='imageAnimation'
           />
         </div>
           <div className='text-center mx-auto'>
-            <div className='text-5xl text-blue-950 font-semibold mt-10 lg:mt-0'>
+            <div className='text-5xl text-blue-950 font-semibold mt-10 lg:mt-0 transitionIn'>
               {duration} Lesson
             </div>
             <div className='text-blue-900 text-xl'>
-              <div>
+              <div className='transitionIn'>
                 Designed for Beginners / Intermediate
               </div>
-              <div className='my-2 lg:py-5'>
+              <div className='my-2 lg:py-5 transitionIn'>
                 <div className=''>
                   Monday - Friday,
                 </div>
-                <div>
+                <div className='transitionIn'>
                   5:30pm - 9pm MST
                 </div>
               </div>
-              <div className='py-2 text-3xl'>
+              <div className='py-2 text-3xl transitionIn'>
                 {price}
               </div>
               <Link href={link} target='_black'>
-                <button className='p-3 mt-5 bg-red-600 text-white max-w-sm hover:scale-[1.05] transition'>
+                <button className='p-3 mt-5 bg-red-600 text-white max-w-sm hover:scale-[1.05] transition transitionIn'>
                   Sign Up Now
                 </button>
               </Link>

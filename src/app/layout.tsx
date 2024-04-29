@@ -24,8 +24,10 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
             <Navbar />
           </header>
           <div>
-            <ScheduleLessonButton />
             {children}
+          </div>
+          <div className="fixed bottom-0 right-0">
+            <ScheduleLessonButton />
           </div>
           <div>
             <Footer />

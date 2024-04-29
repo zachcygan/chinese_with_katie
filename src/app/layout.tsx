@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { useEffect } from "react";
 import { Inter } from "next/font/google";
 import { FormDataProvider } from "../components/formContext";
-import "./globals.css";
 import ScheduleLessonButton from "../components/scheduleLessonButton";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import "./globals.css";
 
 
 const inter = Inter({ subsets: ["latin"] });

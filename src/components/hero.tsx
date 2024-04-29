@@ -40,7 +40,7 @@ export default function Hero() {
       </div>
       <div className="text-white font-bold">
         <div className="pt-20 pb-10 hiddenTransition">
-          <div className="text-center text-4xl text-wrap mt-10">
+          <div className="text-center text-4xl lg:text-6xl text-wrap mt-10">
             Raise Your Child's Grade Today!
           </div>
         </div>

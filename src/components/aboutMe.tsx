@@ -54,19 +54,19 @@ export default function AboutMe() {
             />
           </div>
         </div>
-        <div className='max-w-xl mx-auto w-full px-10 text-blue-900 bg-pink-200'>
+        <div className='max-w-xl mx-auto w-full px-1 text-blue-900 bg-pink-200'>
           <div className='hiddenTransitionRight delayAnimation'>
             <div className='text-5xl text-center lg:text-left py-10 hiddenTransitionRight'>
               About me
             </div>
           </div>
           <div className='hiddenTransitionRight delayAnimation'>
-            <div className='py-5 text-2xl lg:text-xl'>
-              <span className='text-2xl font-semibold'>大家好!</span> It's Katie — your guide to learning Mandarin!
+            <div className='py-5 text-xl lg:text-xl'>
+              <span className='text-xl font-semibold'>大家好!</span> It's Katie — your guide to learning Mandarin!
             </div>
           </div>
           <div className='hiddenTransitionRight delayAnimation'>
-            <div className='py-5 max-w-lg pb-10 mx-auto text-2xl md:text-xl lg:text-lg hiddenTransitionRight'>
+            <div className='py-5 max-w-lg pb-10 mx-auto text-xl md:text-xl lg:text-lg hiddenTransitionRight'>
               Ever since I was a child, I have always been fascinated by learning foreign languages and cultures. With a new perspective gained after graduating college, I recognized a crucial demand for more engaging and effective approaches to learning Chinese. As a non-native speaker,  I've experienced the challenges of learning Chinese first hand, making me uniquely suited to understand the learning needs of English speakers. My passion lies in helping others and making education accessible. I'm excited to make your language learning journey a enriching and enjoyable experience!
             </div>
           </div>
@@ -76,6 +76,7 @@ export default function AboutMe() {
         <div className='text-center py-10 text-5xl hiddenTransition'>
           Qualifications
         </div>
+        {/* make same size */}
         <div className='flex flex-col lg:flex-row justify-around items-center pb-20 text-xl lg:text-2xl'>
           <div className='hiddenTransitionRight delayAnimation'>  
             <div className='py-5 border text-center rounded-xl p-2 my-2 bg-pink-200'>

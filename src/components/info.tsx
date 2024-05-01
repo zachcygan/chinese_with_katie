@@ -49,12 +49,12 @@ export default function Info() {
   return (
     <div>
       <div>
-        <div className="text-center text-red-600 font-bold text-3xl xl:text-7xl pt-14 lg:pt-32 hiddenTransition">
-          If you're looking to <span className="underline">raise your child's grade</span>, you've come to the right place
+        <div className="text-center text-red-600 font-bold text-3xl xl:text-6xl pt-14 lg:pt-32 hiddenTransition">
+          If you're looking to raise your child's grade, you've come to the right place
         </div>
-        <div className="text-center pt-7 text-blue-900 text-2xl font-semibold">
-          <div className="p-2 max-w-2xl mx-auto my-2 lg:my-10 hiddenTransition">
-            With structured lessons,  students can have a clear pathway for continuous improvement. Strengthen:
+        <div className="text-center pt-7 text-blue-900 text-xl lg:text-3xl">
+          <div className="p-2 max-w-3xl mx-auto my-2 lg:my-10 hiddenTransition">
+            With structured lessons, students can have a clear pathway for continuous improvement. Strengthen:
           </div>
         </div>
         <div className="flex flex-col lg:flex-row justify-center items-center text-white text-xl lg:text-3xl py-2 lg:py-10">
@@ -68,7 +68,7 @@ export default function Info() {
               Conversational Skills
             </div>
           </div>
-          <div className="hiddenTransitionLeft delayAnimation">
+          <div className="hiddenTransitionLeft delayAnimation flex-grow">
             <div className="max-w-sm lg:mx-5 my-1 flex-1 bg-red-600 p-3 rounded-lg text-center flex items-center justify-center hover:scale-105">
               Grammar
             </div>
@@ -79,7 +79,8 @@ export default function Info() {
             </div>
           </div>
         </div>
-        <div className="text-center text-blue-900 text-xl lg:text-4xl m-2 mt-10 lg:m-10 hiddenTransition">
+        {/* make into 2 lines */}
+        <div className="text-center text-blue-900 text-md w-5xl lg:text-4xl m-2 mt-10 lg:m-10 hiddenTransition">
           My tutoring service is designed for <span className="font-bold">beginning and intermediate Mandarin learners</span>, focusing on the needs of native English speakers.
         </div>
         <div>
@@ -124,7 +125,6 @@ export default function Info() {
                   width={250}
                   height={250}
                   alt='A+'
-
                 />
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function Info() {
                   <div className="py-2 text-2xl lg:text-3xl text-blue-900 font-semibold">Homework Help</div>
                 </div>
                 <div className="text-lg sm:text-xl lg:text-3xl m-1 text-center lg:text-left sm:m-0">
-                  Need help on your homework? Feel free to send this to me before our lesson! We'll work through your problems and learn what areas to focus on.reports
+                  Need help on your homework? Feel free to send this to me before our lesson! We'll work through your problems and learn what areas to focus on.
                 </div>
               </div>
             </div>
@@ -285,6 +285,7 @@ export default function Info() {
               <div className="max-w-2xl mx-auto p-8 hiddenTransition">
                 To best  suit your learning needs, this is your chance to share what you are looking for in our lessons. Let's make sure its the right fit!
               </div>
+              {/* make buttons same size */}
               <div className="flex flex-col md:flex-row justify-center text-white py-5">
                 <div>
                   <button className="bg-blue-900 p-4 my-2 md:my-0 mx-10 hover:scale-[1.05] transition hiddenTransition">
@@ -302,7 +303,7 @@ export default function Info() {
             </div>
           </div>
         </div>
-        <div className="py-10">
+        <div className="lg:py-10">
           <div className="text-white text-7xl bg-red-500 max-w-min mx-auto p-2 rounded-xl m-2 hiddenTransition">
             02
           </div>

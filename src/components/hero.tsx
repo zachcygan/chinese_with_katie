@@ -40,11 +40,11 @@ export default function Hero() {
       </div>
       <div className="text-white font-bold">
         <div className="pt-20 pb-10 hiddenTransition">
-          <div className="text-center text-4xl lg:text-6xl text-wrap mt-10">
+          <div className="text-center text-5xl lg:text-8xl text-wrap mt-10">
             Raise Your Child's Grade Today!
           </div>
         </div>
-        <div className="text-center sm:text-2xl lg:text-4xl 2xl:text-3xl pb-10 hiddenTransition">
+        <div className="text-center sm:text-3xl lg:text-4xl 2xl:text-3xl pb-10 hiddenTransition">
           Personalized tutoring can make all the difference
         </div>
       </div>
@@ -67,10 +67,10 @@ export default function Hero() {
       <div className="text-center text-white pb-20">
         <button
           type="button"
-          className="rounded-full bg-blue-800 p-5 text-md lg:text-lg xl:text-xl hiddenTransition"
+          className="rounded-full bg-blue-800 p-5 text-md lg:text-lg xl:text-2xl hiddenTransition"
           onClick={scrollToGettingStarted}
         >
-          Booke a Lesson Now!
+          Book a Lesson Now!
         </button>
       </div>
     </div>

@@ -25,7 +25,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
           <div>
             {children}
           </div>
-          <div className="fixed bottom-0 right-0">
+          <div className="fixed bottom-0 w-full flex justify-end">
             <ScheduleLessonButton />
           </div>
           <div>

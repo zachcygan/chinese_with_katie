@@ -16,7 +16,7 @@ export default function Footer() {
   const [isSlideOpen, setIsSlideOpen] = useState<boolean>(false)
 
   return (
-    <footer className="top-[100vh] bg-blue-900">
+    <footer className="bg-blue-900">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8 ">
         <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12 sm:items-center" aria-label="Footer">
           {navigation.map((item) => (
@@ -36,6 +36,11 @@ export default function Footer() {
               </Link>
             </div>
           ))}
+        </nav>
+        <nav className='lg:hidden'>
+          <div>
+
+          </div>
         </nav>
         <div className='text-center'>
           <p className="mt-10 text-center text-2xl leading-5 text-white">

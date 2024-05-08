@@ -57,6 +57,7 @@ export default function Info() {
             With structured lessons, students can have a clear pathway for continuous improvement. Strengthen:
           </div>
         </div>
+        {/* map through this */}
         <div className="grid grid-cols-2 lg:grid-cols-4 justify-center items-stretch text-white text-xl lg:text-3xl py-2 lg:py-10 gap-2 mx-2 lg:mx-0 max-w-11/12">
           <div className="hiddenTransitionLeft delayAnimation flex justify-center items-center">
             <div className="max-w-sm lg:mx-5 my-1 bg-red-600 p-3 rounded-lg text-center hover:scale-105 h-full w-full">
@@ -69,12 +70,12 @@ export default function Info() {
             </div>
           </div>
           <div className="hiddenTransitionLeft delayAnimation flex justify-center items-center">
-            <div className="max-w-sm lg:mx-5 my-1 bg-red-600 p-3 rounded-lg text-center flex items-center justify-center hover:scale-105 h-full w-full">
+            <div className="max-w-sm min-h-20 lg:mx-5 my-1 bg-red-600 p-3 rounded-lg text-center flex items-center justify-center hover:scale-105 h-full w-full">
               Grammar
             </div>
           </div>
           <div className="hiddenTransitionLeft delayAnimation flex justify-center items-center">
-            <div className="max-w-sm lg:mx-5 my-1 bg-red-600 p-3 rounded-lg text-center flex items-center justify-center hover:scale-105 h-full w-full">
+            <div className="max-w-sm lg:mx-5 min-h-20 my-1 bg-red-600 p-3 rounded-lg text-center flex items-center justify-center hover:scale-105 h-full w-full">
               Reading Skills
             </div>
           </div>

@@ -85,7 +85,7 @@ export default function BookLesson() {
             <VectorLeft />
           </div>
         </div>
-        {/* make buttons same size */}
+
         <div className="flex flex-col lg:flex-row items-center justify-around max-w-2xl mx-auto lg:py-10">
           <Link href="https://tidycal.com/chinesewithkatie/15-minute-free-consultation-call" target='_blank'>
             <button className="text-2xl text-white lg:text-3xl bg-red-600 p-5 my-2 rounded-xl hover:scale-[1.05] active:scale[.95] transition px-1 transitionIn">
@@ -101,8 +101,8 @@ export default function BookLesson() {
         <Lessons duration={oneHour.duration} price={oneHour.price} image={oneHour.image} link={oneHour.link} />
         <Lessons duration={thirtyMinutes.duration} price={thirtyMinutes.price} image={thirtyMinutes.image} link={thirtyMinutes.link} />
       </div>
-      <div className='relative overflow-visible'>
-        <div className='bg-[#d2d2d2] diagonal-split-background p- w-xl'>
+      <div className='relative'>
+        <div className='bg-[#d2d2d2] diagonal-split-background lg:w-xl'>
           <div className='max-w-lg mx-auto text-center text-2xl lg:text-4xl text-blue-900 my-5 lg:my-20 px-2 transitionIn'>
             Availability is displayed on my calendar when booking a lesson. I suggest booking in advance to reserve your desired time slot
           </div>

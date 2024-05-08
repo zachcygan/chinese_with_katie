@@ -71,6 +71,16 @@
   to { scale: 1; opacity: 1; }
 }
 
+@keyframe slide-in-Left {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+@keyframe slide-in-Right {
+  from { transform: translateX(50%); }
+  to { transform: translateX(0); }
+}
+
 @media(prefers-reduced-motion: reduce){
   .hiddenTransition, .hiddenTransitionLeft, .hiddenTransitionRight, .show, .delayAnimation {
     transition: none;

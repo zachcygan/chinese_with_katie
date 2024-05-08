@@ -17,19 +17,21 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <body className={`max-w-6xl mx-auto ${inter.className}`}>
-        <FormDataProvider>
-          <header>
-            <Navbar />
-          </header>
-          <div>
-            {children}
-          </div>
-          <ScheduleLessonButton />
-          <div>
-            <Footer />
-          </div>
-        </FormDataProvider>
+      <body className={`${inter.className}`}>
+        <div className="max-w-6xl mx-auto">
+          <FormDataProvider>
+            <header>
+              <Navbar />
+            </header>
+            <div>
+              {children}
+            </div>
+            <ScheduleLessonButton />
+            <div>
+              <Footer />
+            </div>
+          </FormDataProvider>
+        </div>
       </body>
     </html>
   );

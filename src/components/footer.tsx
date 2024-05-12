@@ -17,16 +17,16 @@ export default function Footer() {
 
   return (
     <footer className="bg-blue-900">
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8 ">
-        <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12 sm:items-center" aria-label="Footer">
+      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-10 lg:py-20 sm:py-24 lg:px-8 ">
+        <nav className="-mb-6 grid grid-col-2 sm:grid-cols-5 sm:space-x-12 sm:items-center" aria-label="Footer">
           {navigation.map((item) => (
-            <div key={item.name} className="pb-6">
+            <div key={item.name} className={`pb-6 ${item.name === `Katie's Chinese Guide` ? 'col-span-2 sm:col-span-1' : 'col-span-1' }`}>
               <Link href={item.href}>
                 <div
-                  className="leading-6 text-white text-center text-xl"
+                  className={`leading-6  text-center text-xl ${item.name === `Katie's Chinese Guide` ? 'text-red-500' : 'text-white'}`}
                   onClick={(e) => {
                     if (item.name === 'Contact') {
-                      e.preventDefault(); // prevent navigation
+                      e.preventDefault();
                       setIsSlideOpen(true);
                     }
                   }}

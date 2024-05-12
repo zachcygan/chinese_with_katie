@@ -25,7 +25,7 @@ const intro = [
 const sideBySide = [
   {
     title: 'Structured Lesson Plans',
-    text: 'In my lessons, students can expect to learn with a lesson plan suited for their language level. To supplement, we\'ll additionally use workbooks and flashcards. Each student will have access to the lesson plan and notes used in our sessions and parents will receive personalized progress reports',
+    text: 'In my lessons, students can expect to learn with a lesson plan suited for their language level. We\'ll additionally use workbooks and flashcards. Each student will have access to the lesson plan and notes used in our sessions and parents will receive personalized progress reports',
     image: '/assets/images/info1.png',
   },
   {
@@ -40,7 +40,7 @@ const sideBySide = [
     image: '/assets/images/info3.png',
   },
   {
-    title: 'Student Feedback For Parents',
+    title: 'Student Feedback',
     text: 'It\'s always important to view your child\'s progress. After each lesson,  parents will receive personalized progress reports, identifying areas for improvement and displaying achievements.',
     image: '/assets/images/info4.png',
   }
@@ -48,15 +48,15 @@ const sideBySide = [
 
 const expectations = [
   {
-    text: 'Supplemental Material Image',
+    text: 'Supplemental Material',
     image: '/assets/images/book.png',
   },
   {
-    text: 'Online Whiteboard Image',
+    text: 'Online Whiteboard',
     image: '/assets/images/whiteboard.png',
   },
   {
-    text: 'Conversation Practice Image',
+    text: 'Conversation Practice',
     image: '/assets/images/conversation.png',
   }
 ]
@@ -115,7 +115,7 @@ export default function Info() {
   return (
     <div>
       <div>
-        <div className="text-center text-red-600 font-bold text-3xl xl:text-6xl pt-14 lg:pt-32 hiddenTransition">
+        <div className="text-center text-red-600 font-bold text-2xl xl:text-6xl pt-14 px-1 lg:pt-32 hiddenTransition">
           If you're looking to raise your child's grade, you've come to the right place
         </div>
         <div className="text-center pt-7 text-blue-900 text-xl lg:text-3xl">
@@ -127,7 +127,7 @@ export default function Info() {
           className="grid grid-cols-2 lg:grid-cols-4 justify-center items-stretch text-white text-xl lg:text-3xl py-2 lg:py-10 gap-2 mx-2 lg:mx-0 max-w-11/12"
           initial={{ opacity: 0, translateX: -150, filter: 'blur(2px)' }}
           whileInView={{ opacity: 1, translateX: 0, filter: 'blur(0px)' }}
-          transition={{ duration: .6, staggerChildren: .2 }}
+          transition={{ duration: .6, staggerChildren: .2, ease: 'easeInOut' }}
           viewport={{ once: true }}
         >
           {intro.map((item, index) => (
@@ -147,40 +147,47 @@ export default function Info() {
         <div className="text-center text-blue-900 text-md w-5xl lg:text-4xl m-2 mt-10 lg:m-10 hiddenTransition">
           My tutoring service is designed for <span className="font-bold">beginning and intermediate Mandarin learners</span>, focusing on the needs of native English speakers.
         </div>
-        {sideBySide.map((item, index) => (
-          <motion.div
-            key={index}
-            className={`flex justify-between items-center mx-auto max-w-6xl p-2 overflow-hidden ${index % 2 != 0 ? 'flex-row-reverse' : ''}`}
-            initial={index % 2 != 0 ? { opacity: 0, translateX: -100 } : { opacity: 0, translateX: 100 }}
-            whileInView={index % 2 != 0 ? { opacity: 1, translateX: 0 } : { opacity: 1, translateX: 0 }}
-            transition={{ duration: 1, staggerChildren: 1 }}
-            viewport={{ once: true }}
-          >
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: .6, staggerChildren: 1, ease: 'easeInOut' }}
+          viewport={{ once: true }}
+        >
+          {sideBySide.map((item, index) => (
             <motion.div
-              className={`flex-1 flex justify-center hover:scale-[1.1] transition relative size-36 md:size-64 lg:size-80 aspect-square ${item.image == '/assets/images/info2.png' ? 'scale-[.85]' : ''}`}
+              key={index}
+              className={`flex justify-between items-center mx-auto max-w-6xl p-2 overflow-hidden ${index % 2 != 0 ? 'flex-row-reverse' : ''}`}
+              initial={index % 2 != 0 ? { opacity: 0, translateX: -100 } : { opacity: 0, translateX: 100 }}
+              whileInView={index % 2 != 0 ? { opacity: 1, translateX: 0 } : { opacity: 1, translateX: 0 }}
+              transition={{ duration: .6, delay: index * .2, staggerChildren: 1 }}
+              viewport={{ once: true }}
             >
-              <Image
-                src={item.image}
-                fill
-                className={`absolute `}
-                alt='A+'
-              />
-            </motion.div>
-            <div className="flex-1 flex flex-col justify-center items-start">
-              <div className="mx-auto lg:mx-0">
-                <div className="py-2 text-lg md:text-2xl lg:text-3xl text-center lg:text-left text-blue-900 font-semibold">{item.title}</div>
+              <div
+                className={`flex-1 flex justify-center transition relative size-36 md:size-48 lg:size-80 aspect-square ${item.image == '/assets/images/info2.png' ? 'scale-[.8] lg:scale-[.6] hove:scale-[.85] lg:hover:scale-[.65]' : 'scale:[.6] lg:scale-[.7] hove:scale-[.65] lg:hover:scale-[.75]'}`}
+              >
+                <Image
+                  src={item.image}
+                  fill
+                  className={`absolute`}
+                  alt='A+'
+                />
               </div>
-              <div className="text-sm sm:text-xl lg:text-2xl text-center lg:text-left sm:m-0">
-                {item.text}
-              </div>
-              {item.astericks && (
-                <div className="p-1 text-xs lg:text-lg italic font-semibold">
-                  *Ensure to check availability and reserve your spot.
+              <div className="flex-1 flex flex-col justify-center">
+                <div className={`py-2 text-md md:text-2xl lg:text-3xl text-blue-900 font-semibold ${index % 2 != 0 ? 'text-right' : 'text-left'}`}>
+                  {item.title}
                 </div>
-              )}
-            </div>
-          </motion.div>
-        ))}
+                <div className={`text-xs sm:text-xl lg:text-2xl ${index % 2 != 0 ? 'text-right' : 'text-left'}`}>
+                  {item.text}
+                </div>
+                {item.astericks && (
+                  <div className="p-1 text-xs lg:text-lg italic font-semibold">
+                    *Ensure to check availability and reserve your spot.
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
       <DottedLine />
       <div>
@@ -188,7 +195,7 @@ export default function Info() {
           <div className="text-3xl lg:text-6xl text-red-600 text-center font-bold p-10">What to expect in our lessons</div>
         </div>
         <motion.div
-          className="flex flex-col lg:flex-row items-center justify-between delay"
+          className="flex items-center justify-between delay"
           initial={{ opacity: 0, translateX: -100 }}
           whileInView={{ opacity: 1, translateX: 0 }}
           transition={{ duration: .6, staggerChildren: 1 }}
@@ -205,17 +212,18 @@ export default function Info() {
               <motion.div className="flex flex-col">
                 <div className="py-2 sm:py-10 md:py-14 mx-auto hover:scale-[1.2] transition">
                   {item.image &&
-                    <div className='relative size-28'>
+                    <div className={`relative size-16 md:size-20 lg:size-28 `}>
                       <Image
                         src={item.image}
                         fill
                         sizes='(min-width: 640px) 640px, 25vw'
+                        className={`${item.image == '/assets/images/book.png' ? 'mt-2 lg:mt-0' : ''}`}
                         alt="A+"
                       />
                     </div>}
                 </div>
-                <div className="">
-                  <div className="text-2xl text-blue-900">{item.text}</div>
+                <div className="text-lg lg:text-2xl text-center mt-1 text-blue-900 px-3 lg:px-0">
+                  {item.text}
                 </div>
               </motion.div>
             </motion.div>

@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Transition } from '@headlessui/react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -23,11 +23,13 @@ const thirtyMinutes = {
 }
 
 export default function BookLesson() {
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('show');
+          // entry.target.classList.add('show');
+
         }
       });
     });
@@ -118,16 +120,34 @@ export default function BookLesson() {
             </div>
           </Transition>
         </div>
-        {/* <div className="flex flex-col lg:flex-row items-center justify-around max-w-2xl mx-auto lg:py-10">
-          <Link href="https://tidycal.com/chinesewithkatie/15-minute-free-consultation-call" target='_blank'>
-            <button className="text-2xl text-white lg:text-3xl bg-red-600 p-5 my-2 rounded-xl hover:scale-[1.05] active:scale[.95] transition px-1 transitionIn">
-              Free Consultation Call
-            </button>
-          </Link>
-          <button className="text-2xl lg:text-3xl text-white bg-red-600 p-5 rounded-xl hover:scale-[1.05] transition px-1 transitionIn">
-            New Student Form
-          </button>
-        </div> */}
+        <div className="flex flex-col lg:flex-row items-center justify-around max-w-2xl mx-auto lg:py-10">
+          <Transition
+            show={true}
+            appear={true}
+            enterFrom='opacity-0 scale-75'
+            enterTo='opacity-1 scale-100'
+            enter='linear duration-1000'
+          >
+            <Link href="https://tidycal.com/chinesewithkatie/15-minute-free-consultation-call" target='_blank'>
+              <button className="text-2xl text-white lg:text-3xl bg-red-600 p-5 my-2 rounded-xl hover:scale-[1.05] active:scale[.95] transition px-1">
+                Free Consultation Call
+              </button>
+            </Link>
+          </Transition>
+          <Transition
+            show={true}
+            appear={true}
+            enterFrom='opacity-0 scale-75'
+            enterTo='opacity-1 scale-100'
+            enter='linear duration-1000'
+          >
+            <Link href=''>
+              <button className="text-2xl lg:text-3xl text-white bg-red-600 p-5 rounded-xl hover:scale-[1.05] transition px-1">
+                New Student Form
+              </button>
+            </Link>
+          </Transition>
+        </div>
       </div>
       <div>
         <Lessons duration={oneHour.duration} price={oneHour.price} image={oneHour.image} link={oneHour.link} />

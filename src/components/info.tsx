@@ -1,11 +1,36 @@
 'use client'
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import DottedLine from "./dottedLine";
 import VectorRight from "./vectorRight";
 import VectorLeft from "./vectorLeft";
 import Expectations from "./expectations";
+
+const sideBySide = [
+  {
+    title: 'Structured Lesson Plans',
+    text: 'In my lessons, students can expect to learn with a lesson plan suited for their language level. To supplement, we\'ll additionally use workbooks and flashcards. Each student will have access to the lesson plan and notes used in our sessions and parents will receive personalized progress reports',
+    image: '/assets/images/info1.png',
+  },
+  {
+    title: 'Flexability',
+    text: 'Being an online tutor makes it easy for me to be accommodating of your schedule! My hours for tutoring are  from Monday to Friday, 5:30pm -9pm MST .',
+    image: '/assets/images/info2.png',
+    astericks: '*Ensure to check availability and reserve your spot.'
+  },
+  {
+    title: 'Homework Help',
+    text: 'Need help on your homework? Feel free to send this to me before our lesson! We\'ll work through your problems and learn what areas to focus on.',
+    image: '/assets/images/info3.png',
+  },
+  {
+    title: 'Student Feedback For Parents',
+    text: 'It\'s always important to view your child\'s progress. After each lesson,  parents will receive personalized progress reports, identifying areas for improvement and displaying achievements.',
+    image: '/assets/images/info4.png',
+  }
+]
 
 export default function Info() {
   useEffect(() => {
@@ -84,144 +109,31 @@ export default function Info() {
         <div className="text-center text-blue-900 text-md w-5xl lg:text-4xl m-2 mt-10 lg:m-10 hiddenTransition">
           My tutoring service is designed for <span className="font-bold">beginning and intermediate Mandarin learners</span>, focusing on the needs of native English speakers.
         </div>
-        <div>
-          <div className="hiddenTransition lg:hiddenTransitionLeft delayAnimation">
-            <div className="flex justify-between flex-col lg:flex-row items-center mx-auto max-w-4xl p-2">
-              <div className="flex-1 flex justify-center hover:scale-[1.1] transition">
-                <Image
-                  src='/assets/images/info1.png'
-                  width={250}
-                  height={250}
-                  alt='A+'
-                />
+        {sideBySide.map((item, index) => (
+          <div key={index} className={`flex justify-between items-center mx-auto max-w-6xl p-2 ${index % 2 != 0 ? 'flex-row-reverse' : ''}`}>
+            <div className={`flex-1 flex justify-center hover:scale-[1.1] transition relative size-36 md:size-64 lg:size-80 aspect-square ${item.image == '/assets/images/info2.png' ? 'scale-[.85]' : ''}`}>
+              <Image
+                src={item.image}
+                fill
+                className={`absolute `}
+                alt='A+'
+              />
+            </div>
+            <div className="flex-1 flex flex-col justify-center items-start">
+              <div className="mx-auto lg:mx-0">
+                <div className="py-2 text-lg md:text-2xl lg:text-3xl text-center lg:text-left text-blue-900 font-semibold">{item.title}</div>
               </div>
-              <div className="flex-1 flex flex-col justify-center items-start">
-                <div className="mx-auto lg:mx-0">
-                  <div className="py-2 text-2xl lg:text-3xl text-blue-900 font-semibold">Structured Lesson Plans</div>
-                </div>
-                <div className="text-lg sm:text-xl lg:text-2xl m-1 text-center lg:text-left sm:m-0">
-                  In my lessons, students can expect to learn with a lesson plan suited for their language level. To supplement, we'll additionally use workbooks and flashcards. Each student will have access to the lesson plan and notes used in our sessions and parents will receive personalized progress reports
-                </div>
+              <div className="text-xs sm:text-xl lg:text-2xl m-1 text-center lg:text-left sm:m-0">
+                {item.text}
               </div>
+              {item.astericks && (
+                <div className="p-1 text-xs lg:text-lg italic font-semibold">
+                  *Ensure to check availability and reserve your spot.
+                </div>
+              )}
             </div>
           </div>
-          <div className="hiddenTransition lg:hiddenTransitionRight delayAnimation">
-            <div className="md:flex justify-between flex-col lg:flex-row items-center mx-auto max-w-4xl p-2 hidden md:display-block">
-              <div className="flex-1 flex flex-col justify-center items-start">
-                <div className="mx-auto lg:mx-0">
-                  <div className="py-2 text-2xl lg:text-3xl text-blue-900 font-semibold">Flexability</div>
-                </div>
-                <div>
-                  <div className="text-lg sm:text-xl lg:text-2xl m-1 text-center lg:text-left sm:m-0">
-                    Being an online tutor makes it easy for me to be accommodating of your schedule! My hours for tutoring are  from Monday to Friday, 5:30pm -9pm MST .
-                  </div>
-                  <div className="p-1 lg:text-md italic font-semibold">
-                    *Ensure to check availability and reserve your spot.
-                  </div>
-                </div>
-              </div>
-              <div className="flex-1 flex justify-center py-2 hover:scale-[1.1] transition">
-                <Image
-                  src='/assets/images/info2.png'
-                  width={250}
-                  height={250}
-                  alt='A+'
-                />
-              </div>
-            </div>
-          </div>
-          {/* mobile view */}
-          <div className="hiddenTransition delayAnimation">
-            <div className="flex justify-between flex-col lg:flex-row items-center mx-auto max-w-4xl p-2 md:hidden">
-              <div className="flex-1 flex justify-center py-2 hover:scale-[1.1] transition hiddenTransition">
-                <Image
-                  src='/assets/images/info2.png'
-                  width={250}
-                  height={250}
-                  alt='A+'
-                />
-              </div>
-              <div className="hiddenTransition">
-                <div className="text-center lg:mx-0">
-                  <div className="py-2 text-2xl lg:text-3xl text-blue-900 font-semibold">Flexability</div>
-                </div>
-                <div>
-                  <div className="text-xl sm:text-2xl lg:text-xl m-1 text-center lg:text-left sm:m-0">
-                    Being an online tutor makes it easy for me to be accommodating of your schedule! My hours for tutoring are  from Monday to Friday, 5:30pm -9pm MST .
-                  </div>
-                  <div className="p-1 italic font-semibold text-sm sm:text-xl text-center">
-                    *Ensure to check availability and reserve your spot.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="hiddenTransition lg:hiddenTransitionLeft delayAnimation">
-            <div className="flex justify-between flex-col lg:flex-row items-center mx-auto max-w-4xl p-2">
-              <div className="flex-1 flex justify-center hover:scale-[1.1] transition">
-                <Image
-                  src='/assets/images/info3.png'
-                  width={250}
-                  height={250}
-                  alt='A+'
-                />
-              </div>
-              <div className="flex-1 flex flex-col justify-center items-start">
-                <div className="mx-auto lg:mx-0">
-                  <div className="py-2 text-2xl lg:text-3xl text-blue-900 font-semibold">Homework Help</div>
-                </div>
-                <div className="text-lg sm:text-xl lg:text-3xl m-1 text-center lg:text-left sm:m-0">
-                  Need help on your homework? Feel free to send this to me before our lesson! We'll work through your problems and learn what areas to focus on.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="hiddenTransition lg:hiddenTransitionRight delayAnimation">
-            <div className="md:flex justify-between flex-col lg:flex-row items-center mx-auto max-w-4xl p-2 hidden md:display-block">
-              <div className="flex-1 flex flex-col justify-center items-start">
-                <div className="mx-auto lg:mx-0">
-                  <div className="py-2 text-2xl lg:text-3xl text-blue-900 font-semibold">Student Feedback For Parents</div>
-                </div>
-                <div>
-                  <div className="text-lg sm:text-xl lg:text-2xl m-1 text-center lg:text-left sm:m-0">
-                    It's always important to view your child's progress. After each lesson,  parents will receive personalized progress reports, identifying areas for improvement and displaying achievements.
-                  </div>
-                </div>
-              </div>
-              <div className="flex-1 flex justify-center py-2 hover:scale-[1.1] transition">
-                <Image
-                  src='/assets/images/info4.png'
-                  width={250}
-                  height={250}
-                  alt='A+'
-                />
-              </div>
-            </div>
-          </div>
-          {/* mobile view */}
-          <div className="hiddenTransition delayAnimation">
-            <div className="flex justify-between flex-col lg:flex-row items-center mx-auto max-w-4xl p-2 md:hidden">
-              <div className="flex-1 flex justify-center py-2 hover:scale-[1.1] transition">
-                <Image
-                  src='/assets/images/info4.png'
-                  width={250}
-                  height={250}
-                  alt='A+'
-                />
-              </div>
-              <div className="">
-                <div className="text-center lg:mx-0">
-                  <div className="py-2 text-2xl lg:text-3xl text-blue-900 font-semibold">Student Feedback for Parents</div>
-                </div>
-                <div>
-                  <div className="text-lg sm:text-xl lg:text-2xl m-1 text-center lg:text-left sm:m-0">
-                    It's always important to view your child's progress. After each lesson, parents will receive personalized progress reports, identifying areas for improvement and displaying achievements.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
       <DottedLine />
       <div>

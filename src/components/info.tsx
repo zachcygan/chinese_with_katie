@@ -1,12 +1,26 @@
 'use client'
 import { useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, stagger } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import DottedLine from "./dottedLine";
 import VectorRight from "./vectorRight";
 import VectorLeft from "./vectorLeft";
-import Expectations from "./expectations";
+
+const intro = [
+  {
+    text: 'Correct Pronunciation',
+  },
+  {
+    text: 'Conversational Skills',
+  },
+  {
+    text: 'Grammar',
+  },
+  {
+    text: 'Reading Skills',
+  }
+]
 
 const sideBySide = [
   {
@@ -31,6 +45,33 @@ const sideBySide = [
     image: '/assets/images/info4.png',
   }
 ]
+
+const expectations = [
+  {
+    text: 'Supplemental Material Image',
+    image: '/assets/images/book.png',
+  },
+  {
+    text: 'Online Whiteboard Image',
+    image: '/assets/images/whiteboard.png',
+  },
+  {
+    text: 'Conversation Practice Image',
+    image: '/assets/images/conversation.png',
+  }
+]
+
+const introVariants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: .6,
+      staggerChildren: .2
+    }
+  }
+}
 
 export default function Info() {
   useEffect(() => {
@@ -82,29 +123,26 @@ export default function Info() {
             With structured lessons, students can have a clear pathway for continuous improvement. Strengthen:
           </div>
         </div>
-        {/* map through this */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 justify-center items-stretch text-white text-xl lg:text-3xl py-2 lg:py-10 gap-2 mx-2 lg:mx-0 max-w-11/12">
-          <div className="hiddenTransitionLeft delayAnimation flex justify-center items-center">
-            <div className="max-w-sm lg:mx-5 my-1 bg-red-600 p-3 rounded-lg text-center hover:scale-105 h-full w-full">
-              Correct Pronunciation
-            </div>
-          </div>
-          <div className="hiddenTransitionLeft delayAnimation flex justify-center items-center">
-            <div className="max-w-sm lg:mx-5 my-1 bg-red-600 p-3 rounded-lg text-center hover:scale-105 h-full w-full">
-              Conversational Skills
-            </div>
-          </div>
-          <div className="hiddenTransitionLeft delayAnimation flex justify-center items-center">
-            <div className="max-w-sm min-h-20 lg:mx-5 my-1 bg-red-600 p-3 rounded-lg text-center flex items-center justify-center hover:scale-105 h-full w-full">
-              Grammar
-            </div>
-          </div>
-          <div className="hiddenTransitionLeft delayAnimation flex justify-center items-center">
-            <div className="max-w-sm lg:mx-5 min-h-20 my-1 bg-red-600 p-3 rounded-lg text-center flex items-center justify-center hover:scale-105 h-full w-full">
-              Reading Skills
-            </div>
-          </div>
-        </div>
+        <motion.div
+          className="grid grid-cols-2 lg:grid-cols-4 justify-center items-stretch text-white text-xl lg:text-3xl py-2 lg:py-10 gap-2 mx-2 lg:mx-0 max-w-11/12"
+          initial={{ opacity: 0, translateX: -150, filter: 'blur(2px)' }}
+          whileInView={{ opacity: 1, translateX: 0, filter: 'blur(0px)' }}
+          transition={{ duration: .6, staggerChildren: .2 }}
+          viewport={{ once: true }}
+        >
+          {intro.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, translateX: -150, filter: 'blur(2px)' }}
+              whileInView={{ opacity: 1, translateX: 0, filter: 'blur(0px)' }}
+              transition={{ duration: .6, delay: index * .2 }}
+              viewport={{ once: true }}
+              className="max-w-sm lg:mx-5 my-1 bg-red-600 p-3 rounded-lg text-center content-center hover:scale-105 h-20"
+            >
+              {item.text}
+            </motion.div>
+          ))}
+        </motion.div>
         {/* make into 2 lines */}
         <div className="text-center text-blue-900 text-md w-5xl lg:text-4xl m-2 mt-10 lg:m-10 hiddenTransition">
           My tutoring service is designed for <span className="font-bold">beginning and intermediate Mandarin learners</span>, focusing on the needs of native English speakers.
@@ -115,7 +153,7 @@ export default function Info() {
             className={`flex justify-between items-center mx-auto max-w-6xl p-2 overflow-hidden ${index % 2 != 0 ? 'flex-row-reverse' : ''}`}
             initial={index % 2 != 0 ? { opacity: 0, translateX: -100 } : { opacity: 0, translateX: 100 }}
             whileInView={index % 2 != 0 ? { opacity: 1, translateX: 0 } : { opacity: 1, translateX: 0 }}
-            transition={{ duration: 1, staggerChildren: 0.5}}
+            transition={{ duration: 1, staggerChildren: 1 }}
             viewport={{ once: true }}
           >
             <motion.div
@@ -132,7 +170,7 @@ export default function Info() {
               <div className="mx-auto lg:mx-0">
                 <div className="py-2 text-lg md:text-2xl lg:text-3xl text-center lg:text-left text-blue-900 font-semibold">{item.title}</div>
               </div>
-              <div className="text-xs sm:text-xl lg:text-2xl m-1 text-center lg:text-left sm:m-0">
+              <div className="text-sm sm:text-xl lg:text-2xl text-center lg:text-left sm:m-0">
                 {item.text}
               </div>
               {item.astericks && (
@@ -149,17 +187,40 @@ export default function Info() {
         <div>
           <div className="text-3xl lg:text-6xl text-red-600 text-center font-bold p-10">What to expect in our lessons</div>
         </div>
-        <div className="flex flex-col lg:flex-row items-center justify-between delay">
-          <div className="hiddenTransitionLeft delayAnimation">
-            <Expectations image='/assets/images/book.png' text='Supplemental Material Image' />
-          </div>
-          <div className="hiddenTransitionLeft delayAnimation">
-            <Expectations image='/assets/images/whiteboard.png' text='Online Whiteboard Image' />
-          </div>
-          <div className="hiddenTransitionLeft delayAnimation">
-            <Expectations image='/assets/images/conversation.png' text='Conversation Practice Image' />
-          </div>
-        </div>
+        <motion.div
+          className="flex flex-col lg:flex-row items-center justify-between delay"
+          initial={{ opacity: 0, translateX: -100 }}
+          whileInView={{ opacity: 1, translateX: 0 }}
+          transition={{ duration: .6, staggerChildren: 1 }}
+          viewport={{ once: true }}
+        >
+          {expectations.map((item, index) =>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, translateX: -100 }}
+              whileInView={{ opacity: 1, translateX: 0 }}
+              transition={{ duration: .6, delay: index * .2 }}
+              viewport={{ once: true }}
+            >
+              <motion.div className="flex flex-col">
+                <div className="py-2 sm:py-10 md:py-14 mx-auto hover:scale-[1.2] transition">
+                  {item.image &&
+                    <div className='relative size-28'>
+                      <Image
+                        src={item.image}
+                        fill
+                        sizes='(min-width: 640px) 640px, 25vw'
+                        alt="A+"
+                      />
+                    </div>}
+                </div>
+                <div className="">
+                  <div className="text-2xl text-blue-900">{item.text}</div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </motion.div>
       </div>
       <div className="text-blue-900 text-center text-xl lg:text-3xl pt-20">
         <div className="flex justify-center hiddenTransition">

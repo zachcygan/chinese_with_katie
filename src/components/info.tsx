@@ -110,15 +110,24 @@ export default function Info() {
           My tutoring service is designed for <span className="font-bold">beginning and intermediate Mandarin learners</span>, focusing on the needs of native English speakers.
         </div>
         {sideBySide.map((item, index) => (
-          <div key={index} className={`flex justify-between items-center mx-auto max-w-6xl p-2 ${index % 2 != 0 ? 'flex-row-reverse' : ''}`}>
-            <div className={`flex-1 flex justify-center hover:scale-[1.1] transition relative size-36 md:size-64 lg:size-80 aspect-square ${item.image == '/assets/images/info2.png' ? 'scale-[.85]' : ''}`}>
+          <motion.div
+            key={index}
+            className={`flex justify-between items-center mx-auto max-w-6xl p-2 overflow-hidden ${index % 2 != 0 ? 'flex-row-reverse' : ''}`}
+            initial={index % 2 != 0 ? { opacity: 0, translateX: -100 } : { opacity: 0, translateX: 100 }}
+            whileInView={index % 2 != 0 ? { opacity: 1, translateX: 0 } : { opacity: 1, translateX: 0 }}
+            transition={{ duration: 1, staggerChildren: 0.5}}
+            viewport={{ once: true }}
+          >
+            <motion.div
+              className={`flex-1 flex justify-center hover:scale-[1.1] transition relative size-36 md:size-64 lg:size-80 aspect-square ${item.image == '/assets/images/info2.png' ? 'scale-[.85]' : ''}`}
+            >
               <Image
                 src={item.image}
                 fill
                 className={`absolute `}
                 alt='A+'
               />
-            </div>
+            </motion.div>
             <div className="flex-1 flex flex-col justify-center items-start">
               <div className="mx-auto lg:mx-0">
                 <div className="py-2 text-lg md:text-2xl lg:text-3xl text-center lg:text-left text-blue-900 font-semibold">{item.title}</div>
@@ -132,7 +141,7 @@ export default function Info() {
                 </div>
               )}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
       <DottedLine />

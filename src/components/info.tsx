@@ -124,7 +124,7 @@ export default function Info() {
           </div>
         </div>
         <motion.div
-          className="grid grid-cols-2 lg:grid-cols-4 justify-center items-stretch text-white text-xl lg:text-3xl py-2 lg:py-10 gap-2 mx-2 lg:mx-0 max-w-11/12"
+          className="grid grid-cols-2 lg:grid-cols-4 justify-center items-stretch text-white text-xl lg:text-3xl py-2 lg:py-10 gap-2 mx-2 lg:mx-0 max-w-11/12 overflow-hidden"
           initial={{ opacity: 0, translateX: -150, filter: 'blur(2px)' }}
           whileInView={{ opacity: 1, translateX: 0, filter: 'blur(0px)' }}
           transition={{ duration: .6, staggerChildren: .2, ease: 'easeInOut' }}
@@ -152,6 +152,7 @@ export default function Info() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: .6, staggerChildren: 1, ease: 'easeInOut' }}
           viewport={{ once: true }}
+          className="overflow-hidden"
         >
           {sideBySide.map((item, index) => (
             <motion.div
@@ -195,7 +196,7 @@ export default function Info() {
           <div className="text-3xl lg:text-6xl text-red-600 text-center font-bold p-10">What to expect in our lessons</div>
         </div>
         <motion.div
-          className="flex items-center justify-between delay"
+          className="flex items-center justify-between delay overflow-hidden"
           initial={{ opacity: 0, translateX: -100 }}
           whileInView={{ opacity: 1, translateX: 0 }}
           transition={{ duration: .6, staggerChildren: 1 }}

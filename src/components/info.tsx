@@ -74,43 +74,43 @@ const introVariants = {
 }
 
 export default function Info() {
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    });
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         entry.target.classList.add('show');
+  //       }
+  //     });
+  //   });
 
-    const hiddenElements = document.querySelectorAll('.hiddenTransition');
-    hiddenElements.forEach((element) => {
-      observer.observe(element);
-    });
+  //   const hiddenElements = document.querySelectorAll('.hiddenTransition');
+  //   hiddenElements.forEach((element) => {
+  //     observer.observe(element);
+  //   });
 
-    const hiddenElementsRight = document.querySelectorAll('.hiddenTransitionRight'); // Use separate variable for hiddenTransitionRight
-    hiddenElementsRight.forEach((element) => {
-      observer.observe(element);
-    });
+  //   const hiddenElementsRight = document.querySelectorAll('.hiddenTransitionRight'); // Use separate variable for hiddenTransitionRight
+  //   hiddenElementsRight.forEach((element) => {
+  //     observer.observe(element);
+  //   });
 
-    const hiddenElementsLeft = document.querySelectorAll('.hiddenTransitionLeft'); // Use separate variable for hiddenTransitionLeft
-    hiddenElementsLeft.forEach((element) => {
-      observer.observe(element);
-    });
+  //   const hiddenElementsLeft = document.querySelectorAll('.hiddenTransitionLeft'); // Use separate variable for hiddenTransitionLeft
+  //   hiddenElementsLeft.forEach((element) => {
+  //     observer.observe(element);
+  //   });
 
-    // Cleanup observer on component unmount
-    return () => {
-      hiddenElements.forEach((element) => {
-        observer.unobserve(element);
-      });
-      hiddenElementsRight.forEach((element) => {
-        observer.unobserve(element);
-      });
-      hiddenElementsLeft.forEach((element) => {
-        observer.unobserve(element);
-      });
-    };
-  }, []);
+  //   // Cleanup observer on component unmount
+  //   return () => {
+  //     hiddenElements.forEach((element) => {
+  //       observer.unobserve(element);
+  //     });
+  //     hiddenElementsRight.forEach((element) => {
+  //       observer.unobserve(element);
+  //     });
+  //     hiddenElementsLeft.forEach((element) => {
+  //       observer.unobserve(element);
+  //     });
+  //   };
+  // }, []);
 
   return (
     <div>
@@ -259,42 +259,72 @@ export default function Info() {
       </div>
       <DottedLine />
       <div className="text-center py-10" id='gettingStarted'>
-        <div className="hiddenTransition">
-          <div className="text-red-600 text-2xl lg:text-4xl font-bold py-5">
-            Get Started in TWO Easy Steps
-          </div>
-          <div className="py-10">
-            <div className="text-white text-7xl bg-red-500 max-w-min mx-auto p-2 rounded-xl m-2 hiddenTransition">
-              01
-            </div>
-            <div className="text-red-600 font-semibold text-2xl p-2 hiddenTransition">
-              Fill out the New Student Form OR sign up for a free consultation call
-            </div>
-            <div className="text-blue-900 text-xl">
-              <div className="max-w-sm inline-block mx-auto font-semibold underline hover:scale-[1.05] transition hiddenTransition">
-                This is for new students only
+
+        <motion.div
+          className="text-red-600 text-2xl lg:text-4xl font-bold py-5"
+          initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+          whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          transition={{ duration: .5 }}
+          viewport={{ once: true }}
+        >
+          Get Started in TWO Easy Steps
+        </motion.div>
+        <div className="py-10">
+          <motion.div
+            className="text-white text-7xl bg-red-500 max-w-min mx-auto p-2 rounded-xl m-2"
+            initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            transition={{ duration: .5 }}
+            viewport={{ once: true }}
+          >
+            01
+          </motion.div>
+          <motion.div
+            className="text-red-600 font-semibold text-2xl p-2"
+            initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            transition={{ duration: .5 }}
+            viewport={{ once: true }}
+          >
+            Fill out the New Student Form OR sign up for a free consultation call
+          </motion.div>
+          <div className="text-blue-900 text-xl">
+            <motion.div
+              className="max-w-sm inline-block mx-auto font-semibold underline"
+              initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+              whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+              transition={{ duration: .5 }}
+              viewport={{ once: true }}
+            >
+              This is for new students only
+            </motion.div>
+            <motion.div
+              className="max-w-2xl mx-auto p-8"
+              initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+              whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+              transition={{ duration: .5 }}
+              viewport={{ once: true }}
+            >
+              To best  suit your learning needs, this is your chance to share what you are looking for in our lessons. Let's make sure its the right fit!
+            </motion.div>
+            {/* make buttons same size */}
+            <div className="flex flex-col md:flex-row justify-center text-white py-5">
+              <div>
+                <button className="bg-blue-900 p-4 my-2 md:my-0 mx-10 hover:scale-[1.05] transition hiddenTransition">
+                  New Student Form {`>`}
+                </button>
               </div>
-              <div className="max-w-2xl mx-auto p-8 hiddenTransition">
-                To best  suit your learning needs, this is your chance to share what you are looking for in our lessons. Let's make sure its the right fit!
-              </div>
-              {/* make buttons same size */}
-              <div className="flex flex-col md:flex-row justify-center text-white py-5">
-                <div>
-                  <button className="bg-blue-900 p-4 my-2 md:my-0 mx-10 hover:scale-[1.05] transition hiddenTransition">
-                    New Student Form {`>`}
+              <div>
+                <Link href='https://tidycal.com/chinesewithkatie/15-minute-free-consultation-call' target="_blank">
+                  <button className="bg-blue-900 p-4 mx-10 hover:scale-[1.05] transition hiddenTransition">
+                    Free 15 Minutes Consultation Call {`>`}
                   </button>
-                </div>
-                <div>
-                  <Link href='https://tidycal.com/chinesewithkatie/15-minute-free-consultation-call' target="_blank">
-                    <button className="bg-blue-900 p-4 mx-10 hover:scale-[1.05] transition hiddenTransition">
-                      Free 15 Minutes Consultation Call {`>`}
-                    </button>
-                  </Link>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
         </div>
+
         <div className="lg:py-10">
           <div className="text-white text-7xl bg-red-500 max-w-min mx-auto p-2 rounded-xl m-2 hiddenTransition">
             02

@@ -142,7 +142,7 @@ export default function Info() {
             className={`flex justify-between items-center mx-auto max-w-6xl p-2 overflow-hidden ${index % 2 !== 0 ? 'flex-row-reverse' : ''}`}
             initial="hidden"
             whileInView="visible"
-            variants={leftToRightVariants}
+            variants={index % 2 !== 0 ? leftToRightVariants : rightToLeftVariants}
             viewport={{ once: true }}
           >
             <div className={`flex-1 flex justify-center transition relative size-36 md:size-48 lg:size-80 aspect-square ${item.image == '/assets/images/info2.png' ? 'scale-[.8] lg:scale-[.6] hover:scale-[.85] lg:hover:scale-[.65]' : 'scale:[.6] lg:scale-[.7] hover:scale-[.65] lg:hover:scale-[.75]'}`}>

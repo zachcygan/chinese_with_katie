@@ -88,7 +88,7 @@ const fadeInUpVariants = {
 
 export default function Info() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <motion.div
         className="text-center text-red-600 font-bold text-2xl xl:text-6xl pt-14 px-1 lg:pt-32"
         initial="hidden"

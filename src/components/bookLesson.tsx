@@ -21,6 +21,22 @@ const thirtyMinutes = {
   link: 'https://tidycal.com/chinesewithkatie/30-minute-tutoring-session'
 }
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const leftToRightVariants = {
+  hidden: { opacity: 0, translateX: -50, filter: 'blur(2px)' },
+  visible: { opacity: 1, translateX: 0, filter: 'blur(0px)', transition: { duration: 0.6 } },
+};
+
 export default function BookLesson() {
   return (
     <div className='relative overflow-hidden'>
@@ -87,9 +103,15 @@ export default function BookLesson() {
       </div>
       <div className='relative -m-22 bg-[#d2d2d2] diagonal-split-background left-0 top-0'>
         <div className='lg:w-xl'>
-          <div className='max-w-lg mx-auto text-center text-2xl lg:text-4xl text-blue-900 my-5 lg:my-20 px-2 transitionIn'>
+          <motion.div
+            className='max-w-lg mx-auto text-center text-2xl lg:text-4xl text-blue-900 my-5 lg:my-20 px-2'
+            initial='hidden'
+            whileInView='visible'
+            variants={leftToRightVariants}
+            viewport={{ once: true }}
+          >
             Availability is displayed on my calendar when booking a lesson. I suggest booking in advance to reserve your desired time slot
-          </div>
+          </motion.div>
           <div className='mt-10 lg:my-0'>
             <div className='absolute left-0 top-0 w-screen h-full'>
               <Image
@@ -99,28 +121,42 @@ export default function BookLesson() {
                 className='z-1'
               />
             </div>
-            <div className='p-10'>
-              <div className='hiddenTransitionRight delayAnimation'>
-                <div className='text-blue-900 text-2xl lg:text-3xl font-semibold'>
-                  Bundle and Save!
-                </div>
-              </div>
-              <div className='hiddenTransitionRight delayAnimation'>
-                <div className='text-3xl lg:text-5xl text-red-600'>
-                  New Student Sale
-                </div>
-              </div>
-              <div className='hiddenTransitionRight delayAnimation'>
-                <div className='text-xl lg:text-3xl text-blue-900 mt-6 font-semibold'>
-                  Book a total of 4 lessons as a bundle receive 25% off!
-                </div>
-              </div>
-              <div className='hiddenTransitionRight delayAnimation'>
-                <div className='mt-2 lg:mt-14 text-xl lg:text-3xl text-blue-900'>
-                  To receive this deal, please specify that you are interested in this sale during our conversation call or in the "New Student Form"
-                </div>
-              </div>
-            </div>
+            <motion.div
+              className='p-10'
+              initial='hidden'
+              whileInView='visible'
+              variants={containerVariants}
+              viewport={{ once: true }}
+            >
+              <motion.div
+                className='text-blue-900 text-2xl lg:text-3xl font-semibold'
+                variants={leftToRightVariants}
+                viewport={{ once: true }}
+              >
+                Bundle and Save!
+              </motion.div>
+              <motion.div
+                className='text-3xl lg:text-5xl text-red-600'
+                variants={leftToRightVariants}
+                viewport={{ once: true }}
+              >
+                New Student Sale
+              </motion.div>
+              <motion.div
+                className='text-xl lg:text-3xl text-blue-900 mt-6 font-semibold'
+                variants={leftToRightVariants}
+                viewport={{ once: true }}
+              >
+                Book a total of 4 lessons as a bundle receive 25% off!
+              </motion.div>
+              <motion.div
+                className='mt-2 lg:mt-14 text-xl lg:text-3xl text-blue-900'
+                variants={leftToRightVariants}
+                viewport={{ once: true }}
+              >
+                To receive this deal, please specify that you are interested in this sale during our conversation call or in the "New Student Form"
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </div>

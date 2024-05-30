@@ -43,27 +43,21 @@ export default function AboutMe() {
 
   return (
     <div>
-      <div className='flex flex-col md:flex-row border justify-items-center'>
-        <div className='relative w-full'>
-          <div className='inset-0 size-80'>
+      <div className='bg-pink-200'>
+        <div className='mx-auto w-full px-1 text-blue-900 max-w-5xl'>
+          <div className='inset-0 size-60 mt-10 relative float-start'>
             <Image
               src={'/assets/images/katie.webp'}
               fill
               alt='Katie'
-              className='absolute aspect-square imageAnimation'
+              className='absolute aspect-square imageAnimation rounded-full'
             />
           </div>
-        </div>
-        <div className='max-w-xl mx-auto w-full px-1 text-blue-900 bg-pink-200'>
-          <div className='hiddenTransitionRight delayAnimation'>
-            <div className='text-5xl text-center lg:text-left py-10 hiddenTransitionRight'>
-              About me
-            </div>
+          <div className='text-5xl text-center lg:text-left py-10'>
+            About me
           </div>
-          <div className='hiddenTransitionRight delayAnimation'>
-            <div className='py-5 text-xl lg:text-xl'>
-              <span className='text-xl font-semibold'>大家好!</span> It's Katie — your guide to learning Mandarin!
-            </div>
+          <div className='py-5 text-xl lg:text-xl'>
+            <span className='text-xl font-semibold'>大家好!</span> It's Katie — your guide to learning Mandarin!
           </div>
           <div className='hiddenTransitionRight delayAnimation'>
             <div className='py-5 max-w-lg pb-10 mx-auto text-xl md:text-xl lg:text-lg hiddenTransitionRight'>
@@ -78,19 +72,19 @@ export default function AboutMe() {
         </div>
         {/* make same size */}
         <div className='flex flex-col lg:flex-row justify-around items-center pb-20 text-xl lg:text-2xl'>
-          <div className='hiddenTransitionRight delayAnimation'>  
+          <div className='hiddenTransitionRight delayAnimation'>
             <div className='py-5 border text-center rounded-xl p-2 my-2 bg-pink-200'>
               Boise State BBA Graduate
             </div>
           </div>
-          <div className='hiddenTransitionRight delayAnimation'>  
+          <div className='hiddenTransitionRight delayAnimation'>
             <div className='border text-center rounded-xl p-2 my-2 bg-pink-200'>
               <div>
                 Mandarin Certificate + Chinese Speaking Award Winner
               </div>
             </div>
           </div>
-          <div className='hiddenTransitionRight delayAnimation'>  
+          <div className='hiddenTransitionRight delayAnimation'>
             <div className='py-5 border text-center rounded-xl p-2 my-2 bg-pink-200'>
               3 Years Experience Tutor
             </div>

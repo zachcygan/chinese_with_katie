@@ -90,20 +90,20 @@ export default function Info() {
   return (
     <div>
       <motion.div
+        className="text-center text-red-600 font-bold text-2xl xl:text-6xl pt-14 px-1 lg:pt-32"
         initial="hidden"
         whileInView="visible"
-        transition={{ duration: 0.5 }}
+        variants={fadeInUpVariants}
         viewport={{ once: true }}
-        className="text-center text-red-600 font-bold text-2xl xl:text-6xl pt-14 px-1 lg:pt-32"
       >
         If you're looking to raise your child's grade, you've come to the right place
       </motion.div>
       <motion.div
+        className="text-center pt-7 text-blue-900 text-xl lg:text-3xl"
         initial="hidden"
         whileInView="visible"
-        transition={{ duration: 0.5 }}
+        variants={fadeInUpVariants}
         viewport={{ once: true }}
-        className="text-center pt-7 text-blue-900 text-xl lg:text-3xl"
       >
         <div className="p-2 max-w-3xl mx-auto my-2 lg:my-10">
           With structured lessons, students can have a clear pathway for continuous improvement. Strengthen:
@@ -213,7 +213,7 @@ export default function Info() {
             initial="hidden"
             whileInView="visible"
             variants={leftToRightVariants}
-            viewport={{ once: true }}          
+            viewport={{ once: true }}
           >
             <VectorRight />
           </motion.div>
@@ -234,7 +234,7 @@ export default function Info() {
             initial="hidden"
             whileInView="visible"
             variants={rightToLeftVariants}
-            viewport={{ once: true }} 
+            viewport={{ once: true }}
           >
             <VectorLeft />
           </motion.div>

@@ -137,7 +137,7 @@ export default function Info() {
               whileInView={{ opacity: 1, translateX: 0, filter: 'blur(0px)' }}
               transition={{ duration: .6, delay: index * .2 }}
               viewport={{ once: true }}
-              className="max-w-sm lg:mx-5 my-1 bg-red-600 p-3 rounded-lg text-center content-center hover:scale-105 h-20"
+              className="max-w-sm lg:mx-5 my-1 bg-red-600 p-3 rounded-lg text-center content-center hover:scale-105 h-20 flex flex-col justify-center items-center"
             >
               {item.text}
             </motion.div>
@@ -231,7 +231,7 @@ export default function Info() {
           )}
         </motion.div>
       </div>
-      <div className="text-blue-900 text-center text-xl lg:text-3xl pt-20">
+      <div className="text-blue-900 text-center text-xl lg:text-3xl pt-6 lg:pt-20">
         <div className="flex justify-center hiddenTransition">
           <div className="">
             <VectorRight />
@@ -248,18 +248,28 @@ export default function Info() {
             <VectorLeft />
           </div>
         </div>
-        <div className="max-w-md mx-auto pt-10">
-          <ul className="list-disc inline-block text-start hiddenTransitionLeft delayAnimation">
+        <motion.div
+          className="max-w-md mx-auto pt-6 lg:pt-10"
+          initial={{ opacity: 0, translateX: -150, filter: 'blur(2px)' }}
+          whileInView={{ opacity: 1, translateX: 0, filter: 'blur(0px)' }}
+          transition={{ duration: .6, }}
+          viewport={{ once: true }}
+        >
+          <motion.ul
+            className="list-disc inline-block text-start"
+            initial={{ opacity: 0, translateX: -150, filter: 'blur(2px)' }}
+            whileInView={{ opacity: 1, translateX: 0, filter: 'blur(0px)' }}
+            transition={{ duration: .6, staggerChildren: .2 }}
+            viewport={{ once: true }}>
             <li>Pronunciation</li>
             <li>Pinyin Tones</li>
             <li>HSK Vocabulary</li>
             <li>Sentence Structure</li>
-          </ul>
-        </div>
+          </motion.ul>
+        </motion.div>
       </div>
       <DottedLine />
       <div className="text-center py-10" id='gettingStarted'>
-
         <motion.div
           className="text-red-600 text-2xl lg:text-4xl font-bold py-5"
           initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
@@ -308,7 +318,13 @@ export default function Info() {
               To best  suit your learning needs, this is your chance to share what you are looking for in our lessons. Let's make sure its the right fit!
             </motion.div>
             {/* make buttons same size */}
-            <div className="flex flex-col md:flex-row justify-center text-white py-5">
+            <motion.div 
+              className="flex flex-col md:flex-row justify-center text-white py-5"
+              initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+              whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+              transition={{ duration: .5 }}
+              viewport={{ once: true }}
+            >
               <div>
                 <button className="bg-blue-900 p-4 my-2 md:my-0 mx-10 hover:scale-[1.05] transition hiddenTransition">
                   New Student Form {`>`}
@@ -321,28 +337,52 @@ export default function Info() {
                   </button>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
         <div className="lg:py-10">
-          <div className="text-white text-7xl bg-red-500 max-w-min mx-auto p-2 rounded-xl m-2 hiddenTransition">
+          <motion.div 
+            className="text-white text-7xl bg-red-500 max-w-min mx-auto p-2 rounded-xl m-2"
+            initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            transition={{ duration: .5 }}
+            viewport={{ once: true }}
+          >
             02
-          </div>
-          <div className="text-red-600 font-semibold text-2xl p-2 hiddenTransition">
+          </motion.div>
+          <motion.div 
+            className="text-red-600 font-semibold text-2xl p-2"
+            initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            transition={{ duration: .5 }}
+            viewport={{ once: true }}
+          >
             Sign up for a lesson!
-          </div>
-          <div className="text-blue-900 text-xl hiddenTransition">
-            <div className="max-w-2xl mx-auto p-2">
+          </motion.div>
+          <div className="text-blue-900 text-xl">
+            <motion.div 
+              className="max-w-2xl mx-auto p-2"
+              initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+              whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+              transition={{ duration: .5 }}
+              viewport={{ once: true }}
+            >
               To sign up, select either a 30 minute or 1 hour lesson from my bookings page. The selection will navigate you to my calendar, where you can book a lesson based on my avaiablilty. After booking the lesson, you should receive a confirmation email, then you're all set!
-            </div>
-            <div className="text-white py-5">
+            </motion.div>
+            <motion.div 
+             className="text-white py-5"
+             initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+             whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+             transition={{ duration: .5 }}
+             viewport={{ once: true }}
+            >
               <Link href='/services'>
-                <button className="bg-blue-900 p-4 hover:scale-[1.05] transition hiddenTransition">
+                <button className="bg-blue-900 p-4 hover:scale-[1.05]">
                   My Bookings Page {`>`}
                 </button>
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

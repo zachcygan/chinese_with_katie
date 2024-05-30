@@ -42,7 +42,7 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <div>
+    <div className='overflow-hidden'>
       <div className='bg-pink-200'>
         <div className='mx-auto w-full px-1 text-blue-900 max-w-5xl'>
           <div className='inset-0 size-60 mt-10 relative float-start'>

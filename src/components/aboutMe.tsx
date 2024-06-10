@@ -5,10 +5,10 @@ export default function AboutMe() {
   return (
     <div className='overflow-hidden'>
       <div className='bg-pink-200'>
-        <div className='text-blue-900 md:pl-2 text-5xl text-center md:text-start lg:text-left py-10'>
+        <div className='text-blue-900  text-5xl text-center py-10'>
           About Katie
         </div>
-        <div className='inset-0 size-32 md:size-6 lg:size-80 relative float-start m-3'>
+        <div className='inset-0 size-32 md:size-44 lg:size-52 relative float-start mx-5 my-1'>
           <Image
             src={'/assets/images/katie.webp'}
             fill
@@ -17,10 +17,10 @@ export default function AboutMe() {
           />
         </div>
         <div className='text-blue-900'>
-          <div className='text-xl lg:text-xl'>
+          <div className='text-xl lg:text-3xl'>
             <span className='text-xl font-semibold'>大家好!</span> It's Katie — your guide to learning Mandarin!
           </div>
-          <div className='py-5 max-w-lg pb-10 mx-auto text-xl md:text-xl lg:text-lg'>
+          <div className='py-5 pb-10 mx-auto text-xl md:text-xl lg:text-2xl'>
             Ever since I was a child, I have always been fascinated by learning foreign languages and cultures. With a new perspective gained after graduating college, I recognized a crucial demand for more engaging and effective approaches to learning Chinese. As a non-native speaker,  I've experienced the challenges of learning Chinese first hand, making me uniquely suited to understand the learning needs of English speakers. My passion lies in helping others and making education accessible. I'm excited to make your language learning journey a enriching and enjoyable experience!
           </div>
         </div>

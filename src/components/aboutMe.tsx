@@ -1,6 +1,13 @@
 'use client'
 import Image from 'next/image'
 
+const qualifications = [
+  '3 Years Experience Tutor',
+  'BBA Graduate',
+  'Mandarin Certificate',
+  'Chinese Speaking Award Winner'
+]
+
 export default function AboutMe() {
   return (
     <div className='overflow-hidden'>
@@ -31,23 +38,11 @@ export default function AboutMe() {
         </div>
         {/* make same size */}
         <div className='flex flex-col lg:flex-row justify-around items-center lg:pb-20 text-xl lg:text-2xl'>
-          <div className=''>
+          {qualifications.map((qualification) => (
             <div className='py-5 border text-center rounded-xl p-2 my-2 bg-pink-200'>
-              Boise State BBA Graduate
+              {qualification}
             </div>
-          </div>
-          <div className=''>
-            <div className='border text-center rounded-xl p-2 my-2 bg-pink-200'>
-              <div>
-                Mandarin Certificate + Chinese Speaking Award Winner
-              </div>
-            </div>
-          </div>
-          <div className=''>
-            <div className='py-5 border text-center rounded-xl p-2 my-2 bg-pink-200'>
-              3 Years Experience Tutor
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

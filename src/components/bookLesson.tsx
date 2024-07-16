@@ -113,21 +113,22 @@ export default function BookLesson() {
             Availability is displayed on my calendar when booking a lesson. I suggest booking in advance to reserve your desired time slot
           </motion.div>
           <div className='mt-10 lg:my-0'>
-            <div className='absolute left-0 top-0 w-screen h-full'>
-              <Image
-                src='/assets/images/confetti.webp'
-                fill
-                alt='Confetti'
-                className='z-1'
-              />
-            </div>
+
             <motion.div
-              className='p-10'
+              className='p-10 relative'
               initial='hidden'
               whileInView='visible'
               variants={containerVariants}
               viewport={{ once: true }}
             >
+              <div className='absolute left-0 top-0 w-screen h-full'>
+                <Image
+                  src='/assets/images/confetti.webp'
+                  fill
+                  alt='Confetti'
+                  className='z-1'
+                />
+              </div>
               <motion.div
                 className='text-blue-900 text-2xl lg:text-3xl font-semibold'
                 variants={leftToRightVariants}

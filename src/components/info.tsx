@@ -307,7 +307,7 @@ export default function Info() {
               To best suit your learning needs, this is your chance to share what you are looking for in our lessons. Let's make sure it's the right fit!
             </motion.div>
             <motion.div
-              className="flex flex-col md:flex-row justify-center text-white py-5"
+              className="flex flex-col md:flex-row justify-center items-center text-white py-5"
               initial="hidden"
               whileInView="visible"
               variants={fadeInUpVariants}
@@ -322,15 +322,24 @@ export default function Info() {
               </div>
               <div>
                 <Link href='https://tidycal.com/katieschineseguide/15-minute-free-consultation-call' target="_blank">
-                  <button className="bg-blue-900 p-4 mx-10 hover:scale-[1.05]">
-                    Free 15 Minutes Consultation Call {`>`}
+                  <button className="bg-blue-900 p-4 mx-10 hover:scale-[1.05] w-[17ch]">
+                    Free 15 Minute Consultation Call {`>`}
                   </button>
                 </Link>
               </div>
             </motion.div>
+            <motion.div 
+              className="text-blue-900 sm:text-xl lg:text-2xl max-w-2xl mx-auto mt-4 lg:mt-10"
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeInUpVariants}
+              viewport={{ once: true }}
+            >
+              After filling out a new student form or signing up for a consultation, book a lesson below!
+            </motion.div>
           </div>
         </div>
-        <div className="lg:py-10">
+        <div className="">
           <motion.div
             className="text-white text-7xl bg-red-500 max-w-min mx-auto p-2 rounded-xl m-2"
             initial="hidden"

@@ -11,14 +11,14 @@ const oneHour = {
   duration: 'One Hour',
   price: '$50',
   image: '/assets/images/oneHourImage.webp',
-  link: 'https://tidycal.com/chinesewithkatie/60-minute-tutoring-session'
+  link: 'https://tidycal.com/katieschineseguide/one-hour-tutoring-session'
 }
 
 const thirtyMinutes = {
   duration: 'Thirty Minutes',
   price: '$30',
   image: '/assets/images/thirtyMinutesImage.webp',
-  link: 'https://tidycal.com/chinesewithkatie/30-minute-tutoring-session'
+  link: 'https://tidycal.com/katieschineseguide/30-minute-tutoring-session'
 }
 
 const containerVariants = {
@@ -85,12 +85,12 @@ export default function BookLesson() {
           transition={{ duration: .5 }}
           viewport={{ once: true }}
         >
-          <Link href="https://tidycal.com/chinesewithkatie/15-minute-free-consultation-call" target='_blank'>
+          <Link href="https://tidycal.com/katieschineseguide/15-minute-free-consultation-call" target='_blank'>
             <button className="text-2xl text-white lg:text-3xl bg-red-600 p-5 my-2 rounded-xl hover:scale-[1.05] active:scale[.95] transition px-1">
               Free Consultation Call
             </button>
           </Link>
-          <Link href=''>
+          <Link href='https://docs.google.com/forms/d/e/1FAIpQLScNmHvWDDtjVrgjx_X_sHRqdr6qp1uogTupouyvDSLAAB7XbA/viewform?usp=sf_link' target='_blank'>
             <button className="text-2xl lg:text-3xl text-white bg-red-600 p-5 rounded-xl hover:scale-[1.05] transition px-1">
               New Student Form
             </button>

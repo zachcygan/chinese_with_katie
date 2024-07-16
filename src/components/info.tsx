@@ -8,7 +8,7 @@ import VectorLeft from "./vectorLeft";
 
 const intro = [
   {
-    text: 'Correct Pronunciation',
+    text: 'Pronunciation',
   },
   {
     text: 'Conversational Skills',
@@ -314,12 +314,14 @@ export default function Info() {
               viewport={{ once: true }}
             >
               <div>
-                <button className="bg-blue-900 p-4 my-2 md:my-0 mx-10 hover:scale-[1.05]">
-                  New Student Form {`>`}
-                </button>
+                <Link href='https://docs.google.com/forms/d/e/1FAIpQLScNmHvWDDtjVrgjx_X_sHRqdr6qp1uogTupouyvDSLAAB7XbA/viewform?usp=sf_link' target='_blank'>
+                  <button className="bg-blue-900 p-4 my-2 md:my-0 mx-10 hover:scale-[1.05]">
+                    New Student Form {`>`}
+                  </button>
+                </Link>
               </div>
               <div>
-                <Link href='https://tidycal.com/chinesewithkatie/15-minute-free-consultation-call' target="_blank">
+                <Link href='https://tidycal.com/katieschineseguide/15-minute-free-consultation-call' target="_blank">
                   <button className="bg-blue-900 p-4 mx-10 hover:scale-[1.05]">
                     Free 15 Minutes Consultation Call {`>`}
                   </button>

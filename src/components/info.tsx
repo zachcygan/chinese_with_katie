@@ -145,7 +145,7 @@ export default function Info() {
             variants={index % 2 !== 0 ? leftToRightVariants : rightToLeftVariants}
             viewport={{ once: true }}
           >
-            <div className={`flex-1 flex justify-center transition relative size-36 md:size-48 lg:size-80 aspect-square ${item.image == '/assets/images/info2.png' ? 'scale-[.8] lg:scale-[.6] hover:scale-[.85] lg:hover:scale-[.65]' : 'scale:[.6] lg:scale-[.7] hover:scale-[.65] lg:hover:scale-[.75]'}`}>
+            <div className={`flex-1 flex justify-center transition relative size-36 md:size-48 lg:size-80 ${item.image == '/assets/images/info2.png' ? 'scale-[.8] lg:scale-[.6] hover:scale-[.85] lg:hover:scale-[.65]' : 'scale:[.6] lg:scale-[.7] hover:scale-[.65] lg:hover:scale-[.75]'}`}>
               <Image
                 src={item.image}
                 fill

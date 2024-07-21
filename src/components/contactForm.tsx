@@ -11,6 +11,10 @@ export default function ContactForm() {
   const SuccessMessage = 'Thank you for your message, we will get back to you as soon as possible.'
   const [errorMessage, setErrorMessage] = useState<string>('')
   const [sending, setSending] = useState<boolean>(false)
+  const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID
+  const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID
+  const emailJSPublicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY
+  console.log(serviceID, templateID)
   
   const form = useRef<HTMLFormElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
@@ -26,9 +30,8 @@ export default function ContactForm() {
       return;
     }
 
-
     if (form.current !== null) {
-      emailjs.sendForm(`${process.env.NEXT_PUBLIC_SERVICE_ID}`, `${process.env.NEXT_PUBLIC_TEMPLATE_ID}`, form.current, {publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY})
+      emailjs.sendForm(`${serviceID}`, `${templateID}`, form.current, `${emailJSPublicKey}`)
         .then((result) => {
           console.log(result.text)
           if (error) {
@@ -72,8 +75,12 @@ export default function ContactForm() {
     }
   }, [success, error]);
 
+  const handleFormClick = (e: React.MouseEvent<HTMLFormElement>) => {
+    e.stopPropagation();
+  };
+
   return (
-    <form ref={form} onSubmit={sendEmail}>
+    <form ref={form} onSubmit={sendEmail} onClick={handleFormClick}>
       <div ref={errorRef}>
         <Error message={errorMessage} onClose={handleCloseError} visible={error} />
       </div>

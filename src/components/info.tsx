@@ -145,11 +145,11 @@ export default function Info() {
             variants={index % 2 !== 0 ? leftToRightVariants : rightToLeftVariants}
             viewport={{ once: true }}
           >
-            <div className={`flex-1 flex justify-center transition relative size-36 md:size-48 lg:size-80 ${item.image == '/assets/images/info2.png' ? 'scale-[.8] lg:scale-[.6] hover:scale-[.85] lg:hover:scale-[.65]' : 'scale:[.6] lg:scale-[.7] hover:scale-[.65] lg:hover:scale-[.75]'}`}>
+            <div className={`flex justify-center transition aspect-square size-[25%] relative mx-8 lg:mx-36`}>
               <Image
                 src={item.image}
                 fill
-                className={`absolute`}
+                className={``}
                 alt='A+'
               />
             </div>
@@ -200,7 +200,7 @@ export default function Info() {
                   </div>
                 )}
               </div>
-              <div className="text-lg lg:text-2xl text-center mt-1 text-blue-900 px-3 lg:px-0">
+              <div className="text-lg lg:text-2xl text-center mt-1 text-blue-900 lg:px-0">
                 {item.text}
               </div>
             </motion.div>

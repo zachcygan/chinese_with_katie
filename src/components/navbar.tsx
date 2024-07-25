@@ -161,7 +161,7 @@ export default function Navbar() {
                             onClick={(e) => {
                               if (item.name === 'Contact') {
                                 e.preventDefault(); // prevent navigation
-                                setIsSlideOpen(true);
+                                setIsSlideOpen(!isSlideOpen);
                               }
                             }}
                           >

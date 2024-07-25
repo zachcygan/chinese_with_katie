@@ -31,7 +31,7 @@ export default function ContactForm() {
     }
 
     if (form.current !== null) {
-      emailjs.sendForm(`${serviceID}`, `${templateID}`, form.current, `${emailJSPublicKey}`)
+      emailjs.sendForm(`${serviceID}`, `${templateID}`, form.current, `jUyA5LHa70k8i0tEl`)
         .then((result) => {
           console.log(result.text)
           if (error) {

@@ -45,6 +45,8 @@ export default function ContactForm() {
           clearState();
           localStorage.clear()
         }, (error) => {
+          setSending(false)
+          setErrorMessage('An error occurred, please try again later.');
           console.log(error.text);
         });
     } else {

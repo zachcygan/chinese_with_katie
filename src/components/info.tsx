@@ -329,7 +329,7 @@ export default function Info() {
               </div>
             </motion.div>
             <motion.div 
-              className="text-blue-900 sm:text-xl lg:text-2xl max-w-2xl mx-auto mt-4 lg:mt-10"
+              className="text-blue-900 sm:text-xl lg:text-2xl max-w-2xl mx-auto mt-4 lg:mt-10 font-bold"
               initial="hidden"
               whileInView="visible"
               variants={fadeInUpVariants}

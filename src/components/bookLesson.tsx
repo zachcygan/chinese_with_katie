@@ -66,7 +66,7 @@ export default function BookLesson() {
             transition={{ duration: .5 }}
             viewport={{ once: true }}
           >
-            <span className='underline font-semibold'>If you are new to my services</span>, please ensure to sign up for a free consultation
+            <span className='underline font-semibold'>If you are new to my services</span>, please ensure to sign up for a free consultation or fill out a new student form
           </motion.div>
           <motion.div
             className='lg:scale-[1.75]'
@@ -110,7 +110,7 @@ export default function BookLesson() {
             variants={leftToRightVariants}
             viewport={{ once: true }}
           >
-            Availability is displayed on my calendar when booking a lesson. I suggest booking in advance to reserve your desired time slot
+            Availability is displayed on my calendar when booking a lesson. Book in advance to reserve your desired time slot!
           </motion.div>
           <div className='mt-10 lg:my-0'>
 

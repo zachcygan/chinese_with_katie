@@ -31,7 +31,7 @@ export default function ContactForm() {
     }
 
     if (form.current !== null) {
-      emailjs.sendForm(`${serviceID}`, `${templateID}`, form.current, `jUyA5LHa70k8i0tEl`)
+      emailjs.sendForm(`${serviceID}`, `${templateID}`, form.current, `${emailJSPublicKey}`)
         .then((result) => {
           console.log(result.text)
           if (error) {
@@ -45,8 +45,6 @@ export default function ContactForm() {
           clearState();
           localStorage.clear()
         }, (error) => {
-          setSending(false)
-          setErrorMessage('An error occurred, please try again later.');
           console.log(error.text);
         });
     } else {

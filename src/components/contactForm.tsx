@@ -13,7 +13,7 @@ export default function ContactForm() {
   const [sending, setSending] = useState<boolean>(false)
   const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID
   const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID
-  const emailJSPublicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY
+  const emailJSPublicKey = process.env.NEXT_PUBLIC_PUBLICKEY
   console.log(serviceID, templateID)
   
   const form = useRef<HTMLFormElement>(null);

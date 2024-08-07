@@ -79,7 +79,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail} onClick={handleFormClick}>
+    <form ref={form} onSubmit={sendEmail} onClick={handleFormClick} className='overflow-y-scroll'>
       <div ref={errorRef}>
         <Error message={errorMessage} onClose={handleCloseError} visible={error} />
       </div>

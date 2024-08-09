@@ -79,7 +79,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail} onClick={handleFormClick} className='h-dvh'>
+    <form ref={form} onSubmit={sendEmail} onClick={handleFormClick} className=''>
       <div ref={errorRef}>
         <Error message={errorMessage} onClose={handleCloseError} visible={error} />
       </div>

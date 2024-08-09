@@ -11,7 +11,7 @@ type SlideOverProps = {
 
 export default function SlideOver({ isOpen, onClose }: SlideOverProps) {
   return (
-    <Dialog open={isOpen} onClose={onClose} className="relative z-10">
+    <Dialog open={isOpen} onClose={onClose} className="relative z-10 h-dvh">
       <DialogBackdrop
         transition
         className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity duration-500 ease-in-out data-[closed]:opacity-0"

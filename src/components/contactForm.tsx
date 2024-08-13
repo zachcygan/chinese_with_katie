@@ -24,7 +24,7 @@ export default function ContactForm() {
     setSending(true)
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.subject || !formData.message) {
       setErrorMessage('Please fill out all required fields');
-      handleStatus('success', true);
+      handleStatus('error', true);
       setSending(false)
       return;
     }

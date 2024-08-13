@@ -1,6 +1,5 @@
 'use client'
 import { useState, useEffect, forwardRef } from 'react'
-import { Transition } from '@headlessui/react'
 import { XCircleIcon, XMarkIcon } from '@heroicons/react/20/solid'
 
 type ErrorProps = {
@@ -10,8 +9,7 @@ type ErrorProps = {
   ref: any
 }
 
-const Error = forwardRef<HTMLDivElement, ErrorProps>(
-  ({ message, onClose, visible }, ref) => {
+const Error = forwardRef<HTMLDivElement, ErrorProps>(({ message, onClose, visible }, ref) => {
     const [show, setShow] = useState<boolean>(true);
 
     useEffect(() => {
@@ -22,8 +20,8 @@ const Error = forwardRef<HTMLDivElement, ErrorProps>(
 
     return (
       <div ref={ref} className={show ? '' : 'hidden'}>
-        <div className='flex justify-center'>
-          <div className="rounded-md bg-red-50 p-4 z-10 absolute max-w-3/4 -top-12">
+        <div className="flex justify-center">
+          <div className="rounded-md bg-red-50 p-4 z-10 absolute max-w-3/4">
             <div className="flex">
               <div className="flex-shrink-0">
                 <XCircleIcon className="h-5 w-5 text-red-400" aria-hidden="true" />

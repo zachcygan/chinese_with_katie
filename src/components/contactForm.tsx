@@ -23,11 +23,12 @@ export default function ContactForm() {
     e.preventDefault();
     setSending(true)
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.subject || !formData.message) {
-      handleStatus('error', true);
-      setErrorMessage('Please fill out all required fields.');
+      setErrorMessage('Please fill out all required fields');
+      handleStatus('success', true);
       setSending(false)
       return;
     }
+    
 
     if (form.current !== null) {
       emailjs.sendForm(`${serviceID}`, `${templateID}`, form.current, `${emailJSPublicKey}`)
@@ -39,10 +40,10 @@ export default function ContactForm() {
             setSending(false)
           }
           setSending(false)
+          console.log('success')
           handleStatus('success', true);
           setEmailTouched(false);
           clearState();
-          localStorage.clear()
         }, (error) => {
           console.log(error.text);
         });
@@ -66,13 +67,14 @@ export default function ContactForm() {
     handleStatus('success', false);
   }
 
-  useEffect(() => {
-    if (success && successRef.current) {
-      successRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    } else if (error && errorRef.current) {
-      errorRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  }, [success, error]);
+  // Scroll to the success or error message when it appears
+  // useEffect(() => {
+  //   if (success && successRef.current) {
+  //     successRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  //   } else if (error && errorRef.current) {
+  //     errorRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  //   }
+  // }, [success, error]);
 
   const handleFormClick = (e: React.MouseEvent<HTMLFormElement>) => {
     e.stopPropagation();

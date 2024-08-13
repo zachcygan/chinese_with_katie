@@ -63,8 +63,11 @@ export const FormDataProvider = ({ children }: FormDataProviderProps) => {
 
   function handleStatus(state: string, value: boolean) {
     if (state === 'success') {
+      console.log('success form context')
       setSuccess(value);
+      console.log(value)
     } else {
+      console.log('error')
       setError(value);
     }
   }

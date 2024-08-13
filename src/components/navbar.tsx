@@ -16,7 +16,7 @@ const navigation = [
   { name: 'Book a Lesson', href: '/services', current: false },
   { name: 'About', href: '/about', current: false },
   { name: 'Policy', href: '/policy', current: false },
-  { name: 'Contact', href: '', current: false },
+  { name: 'Contact', href: '/contact', current: false },
 ]
 
 function MobileNavItem({ href, children }: NavItemProps) {
@@ -119,11 +119,14 @@ export default function Navbar() {
                               <MobileNavItem href="/services">Book a Lesson</MobileNavItem>
                               <MobileNavItem href="/about">About</MobileNavItem>
                               <MobileNavItem href="/policy">Policy</MobileNavItem>
-                              <div onClick={(e) => {
+                              {/* <div onClick={(e) => {
                                 e.preventDefault(); // prevent navigation
                                 setIsSlideOpen(true);
                               }}>
-                                <MobileNavItem href="#">Contact</MobileNavItem>
+                                <MobileNavItem href="">Contact</MobileNavItem>
+                              </div> */}
+                              <div>
+                                <MobileNavItem href="/contact">Contact</MobileNavItem>
                               </div>
                             </ul>
                           </nav>
@@ -158,12 +161,12 @@ export default function Navbar() {
                             href={item.href}
                             className={`px-5 py-2 rounded-md relative no-underline transition-all ease-in-out hover:scale-[1.05] ${home ? 'text-red-600 font-bold text-2xl' : 'text-xl font-semibold'}`}
                             aria-current={item.href === pathname ? 'page' : undefined}
-                            onClick={(e) => {
-                              if (item.name === 'Contact') {
-                                e.preventDefault(); // prevent navigation
-                                setIsSlideOpen(!isSlideOpen);
-                              }
-                            }}
+                            // onClick={(e) => {
+                            //   if (item.name === 'Contact') {
+                            //     e.preventDefault(); // prevent navigation
+                            //     setIsSlideOpen(!isSlideOpen);
+                            //   }
+                            // }}
                           >
                             <span className=''>{item.name}</span>
                           </Link>

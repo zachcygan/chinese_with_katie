@@ -68,13 +68,13 @@ export default function ContactForm() {
   }
 
   // Scroll to the success or error message when it appears
-  // useEffect(() => {
-  //   if (success && successRef.current) {
-  //     successRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  //   } else if (error && errorRef.current) {
-  //     errorRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  //   }
-  // }, [success, error]);
+  useEffect(() => {
+    if (success && successRef.current) {
+      successRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else if (error && errorRef.current) {
+      errorRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [success, error]);
 
   const handleFormClick = (e: React.MouseEvent<HTMLFormElement>) => {
     e.stopPropagation();

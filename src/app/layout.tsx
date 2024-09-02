@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { FormDataProvider } from "../components/formContext";
+import { Analytics } from "@vercel/analytics/react"
 import ScheduleLessonButton from "../components/scheduleLessonButton";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
@@ -25,6 +26,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
             </header>
             <div>
               {children}
+              <Analytics />
             </div>
             <ScheduleLessonButton />
             <div>

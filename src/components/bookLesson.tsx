@@ -15,7 +15,7 @@ const oneHour = {
 }
 
 const thirtyMinutes = {
-  duration: 'Thirty Minutes',
+  duration: 'Thirty Minute',
   price: '$30',
   image: '/assets/images/thirtyMinutesImage.webp',
   link: 'https://tidycal.com/katieschineseguide/30-minute-tutoring-session'

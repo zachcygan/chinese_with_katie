@@ -3,6 +3,7 @@ import { Fragment, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { Disclosure, Transition, Popover } from '@headlessui/react'
 import Link from 'next/link'
+import Image from 'next/image'
 import SlideOver from './slideOver'
 
 type NavItemProps = {
@@ -72,7 +73,7 @@ export default function Navbar() {
       <Disclosure as="nav">
         {({ open }) => (
           <>
-            <div className="mx-auto px-2 sm:px-6 lg:px-8 -z-10">
+            <div className="mx-auto px-2 lg:px-0 -z-10 relative">
               <div className="relative flex h-16 items-center justify-between">
                 <div className="absolute inset-y-0 right-0 flex items-center min-[900px]:hidden">
                   <Popover>
@@ -135,22 +136,11 @@ export default function Navbar() {
                     </Transition.Root>
                   </Popover>
                 </div>
-                <div className="text-black flex flex-shrink-0 items-center justify-center">
-                  <Link
-                    key={'Zach Cygan\'s Portfolio'}
-                    href={'/'}
-                    className='flex items-center justify-center'
-                  >
-                    {/* <Image
-                    src="/assets/images/headIcon.png"
-                    alt="Website Head Icon"
-                    width={50}
-                    height={50}
-                  /> */}
-                  </Link>
-                </div>
-                <div className="flex-1">
-                  <div className="hidden sm:ml-6 sm:block text-center">
+                <Link href={`/`} className='absolute size-[100px] lg:size-[175px]'>
+                  <Image src="/assets/images/KCGLogo.png" alt="logo" fill />
+                </Link>
+                <div className="basis-full flex justify-center items-center">
+                  <div className="hidden sm:block text-center">
                     <div className="inline-flex ring-1 ring-zinc-900/5 backdrop-blur rounded-full items-center justify-center max-[900px]:hidden shadow-lg">
                       {navigation.map((item) => {
                         // const isActive = item.href === pathname;
@@ -161,12 +151,12 @@ export default function Navbar() {
                             href={item.href}
                             className={`px-5 py-2 rounded-md relative no-underline transition-all ease-in-out hover:scale-[1.05] ${home ? 'text-red-600 font-bold text-2xl' : 'text-xl font-semibold'}`}
                             aria-current={item.href === pathname ? 'page' : undefined}
-                            // onClick={(e) => {
-                            //   if (item.name === 'Contact') {
-                            //     e.preventDefault(); // prevent navigation
-                            //     setIsSlideOpen(!isSlideOpen);
-                            //   }
-                            // }}
+                          // onClick={(e) => {
+                          //   if (item.name === 'Contact') {
+                          //     e.preventDefault(); // prevent navigation
+                          //     setIsSlideOpen(!isSlideOpen);
+                          //   }
+                          // }}
                           >
                             <span className=''>{item.name}</span>
                           </Link>
@@ -175,9 +165,6 @@ export default function Navbar() {
                     </div>
                     <SlideOver isOpen={isSlideOpen} onClose={() => setIsSlideOpen(false)} />
                   </div>
-                </div>
-                <div className='w-[50px]'>
-                  {/* dummby div to move navbar to center */}
                 </div>
               </div>
             </div>

@@ -73,7 +73,7 @@ export default function Navbar() {
       <Disclosure as="nav">
         {({ open }) => (
           <>
-            <div className="mx-auto px-2 lg:px-0 -z-10 relative">
+            <div className="mx-auto px-2 lg:px-0 relative">
               <div className="relative flex h-16 items-center justify-between">
                 <div className="absolute inset-y-0 right-0 flex items-center min-[900px]:hidden">
                   <Popover>

@@ -17,7 +17,7 @@ export default function AboutMe() {
         </div>
         <div className='inset-0 size-32 md:size-44 lg:size-52 relative float-start mx-5 my-1'>
           <Image
-            src={'/assets/images/katie.webp'}
+            src={'/assets/images/KatieGradPic.png'}
             fill
             alt='Katie'
             className='aspect-square rounded-full'
